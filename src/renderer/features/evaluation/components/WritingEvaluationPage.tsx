@@ -25,6 +25,10 @@ import { Label } from '@/components/ui/label';
 import { Progress } from '@/components/ui/progress';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useAttemptDetails } from '@renderer/features/evaluation/hooks/useAttemptDetails';
+import {
+  compareHighlightsByResolvedBounds,
+  resolveHighlightBounds,
+} from '@renderer/features/evaluation/utils/highlight-bounds';
 import { getNextPromptInCategory } from '@renderer/features/prompts/utils/get-next-prompt-in-category';
 import type {
   WritingFeedbackHighlight,
@@ -104,29 +108,6 @@ const formatSubmittedDate = (submittedAt: string): string =>
     year: 'numeric',
   }).format(new Date(submittedAt));
 
-const getHighlightBounds = (
-  essayText: string,
-  highlight: WritingFeedbackHighlight,
-): { start: number; end: number } | null => {
-  const startOffset = Math.max(0, Math.min(highlight.startOffset, essayText.length));
-  const endOffset = Math.max(startOffset, Math.min(highlight.endOffset, essayText.length));
-
-  if (endOffset > startOffset) {
-    return { start: startOffset, end: endOffset };
-  }
-
-  const fallbackStart = essayText.indexOf(highlight.excerpt);
-
-  if (fallbackStart === -1) {
-    return null;
-  }
-
-  return {
-    start: fallbackStart,
-    end: fallbackStart + highlight.excerpt.length,
-  };
-};
-
 const renderAnnotatedEssay = (
   essayText: string,
   highlights: WritingFeedbackHighlight[],
@@ -139,7 +120,7 @@ const renderAnnotatedEssay = (
 
   const annotatedHighlights = highlights
     .map((highlight, index) => ({
-      bounds: getHighlightBounds(essayText, highlight),
+      bounds: resolveHighlightBounds(essayText, highlight),
       highlight,
       index,
     }))
@@ -264,8 +245,8 @@ export const WritingEvaluationPage = (): JSX.Element => {
         ...(attempt?.evaluation?.highlights.filter((highlight) =>
           selectedFilters.includes(highlight.category),
         ) ?? []),
-      ].sort((first, second) => first.startOffset - second.startOffset),
-    [attempt?.evaluation?.highlights, selectedFilters],
+      ].sort(compareHighlightsByResolvedBounds(attempt?.essayText ?? '')),
+    [attempt?.essayText, attempt?.evaluation?.highlights, selectedFilters],
   );
 
   useEffect(() => {
