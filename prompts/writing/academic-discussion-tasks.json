@@ -1,0 +1,352 @@
+[
+  {
+    "id": "targeted-advertising-ethics",
+    "title": "Targeted Advertising Ethics",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on marketing. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Today, we're discussing the ethics of targeted advertising. Modern companies collect large amounts of information about consumers and use that data to show personalized advertisements. Supporters argue that this approach benefits both businesses and customers because people see products that are more relevant to their interests. Critics, however, believe that collecting and analyzing personal data creates serious privacy concerns and gives companies too much influence over consumer behavior. As digital advertising becomes increasingly sophisticated, should targeted advertising be considered an ethical business practice, or does it represent an unacceptable invasion of privacy?",
+      "studentA": "I think targeted advertising is an invasion of privacy. Most people do not fully understand how much information companies collect about them or how that information is used. Even if users agree to privacy policies, those documents are often long and difficult to understand. Companies should focus on creating quality products and advertisements instead of tracking customer behavior. Consumers deserve more control over their personal information and should not feel like they are constantly being monitored online.",
+      "studentB": "I disagree with that view. In my opinion, targeted advertising is a practical and ethical tool when companies are transparent about how data is collected. Personalized advertisements can help consumers discover products and services that actually match their interests instead of being exposed to irrelevant marketing. In addition, businesses can spend their advertising budgets more efficiently, which may help lower costs. As long as users have the ability to adjust privacy settings or opt out, targeted advertising can provide benefits to both companies and consumers."
+    }
+  },
+  {
+    "id": "university-funding-priorities",
+    "title": "University Funding Priorities",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on public administration. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Universities often face difficult decisions about how to allocate limited financial resources. Some people argue that academic facilities such as libraries, laboratories, and research centers should receive the majority of funding because they directly support the institution's educational mission. Others believe that athletic programs deserve significant investment because they strengthen school spirit, attract students, and sometimes generate substantial revenue. Since universities cannot fund every department equally, administrators must decide where resources will have the greatest impact. Should universities prioritize academic facilities, or should sports programs receive similar levels of funding?",
+      "studentA": "I believe universities should prioritize academic facilities. The primary purpose of a university is education, so resources should first support teaching and research. Libraries and laboratories help students develop knowledge and practical skills that will benefit them throughout their careers. Strong academic programs can also attract talented professors and researchers. While sports can be valuable, they should not receive the same level of funding as the facilities that directly contribute to learning and academic achievement.",
+      "studentB": "Although academics are important, I think athletic programs also deserve substantial funding. Sports create a sense of community and school pride that can improve the overall student experience. In addition, successful athletic programs often attract media attention, sponsorships, and donations that benefit the university as a whole. Student athletes also learn teamwork, discipline, and leadership skills. Because sports provide both educational and financial benefits, universities should continue investing in them alongside academic facilities."
+    }
+  },
+  {
+    "id": "remote-work-productivity",
+    "title": "Remote Work Productivity",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on business management. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "In recent years, many organizations have adopted remote work arrangements. Some managers argue that employees are more productive when working from home because they experience fewer distractions and have greater flexibility. Others believe that productivity suffers when employees are physically separated from their colleagues, making communication and collaboration more difficult. As businesses continue to evaluate different workplace models, should remote work become a permanent option for most employees, or is it better for organizations to require staff to work primarily in an office environment?",
+      "studentA": "I think remote work should remain a permanent option whenever possible. Employees save time and money by avoiding long commutes, and many people find it easier to concentrate in a quiet home environment. Flexible schedules can also improve work-life balance and reduce stress. When workers are happier and more comfortable, they are often more productive. Modern communication tools make it possible for teams to collaborate effectively without being in the same physical location every day.",
+      "studentB": "I believe companies should encourage employees to work in an office. Face-to-face interaction makes communication faster and helps build stronger professional relationships. Team members can solve problems more quickly when they are together, and managers can provide immediate guidance when challenges arise. New employees may also learn more effectively by observing experienced colleagues. While remote work has advantages, I think most organizations perform better when employees regularly work together in person."
+    }
+  },
+  {
+    "id": "school-uniforms",
+    "title": "School Uniforms",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on education policy. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many schools around the world require students to wear uniforms, while others allow students to choose their own clothing. Supporters of school uniforms argue that they reduce social pressure, promote equality, and help students focus on academics rather than fashion. Opponents claim that uniforms limit personal expression and do little to improve educational outcomes. Because schools play an important role in shaping student behavior and culture, administrators must decide whether uniforms are beneficial. Should schools require students to wear uniforms, or should students be free to choose their own clothing?",
+      "studentA": "I support school uniforms because they create a more equal learning environment. When everyone wears similar clothing, students are less likely to compare themselves based on fashion trends or expensive brands. This can reduce social pressure and help students focus on their studies. Uniforms may also make schools safer because visitors can be identified more easily. Although students lose some freedom of expression, I think the benefits outweigh the disadvantages.",
+      "studentB": "I do not think schools should require uniforms. Clothing is one of the ways young people express their personality and individuality. Learning how to make responsible choices about appearance is also an important life skill. Uniforms do not necessarily solve issues such as bullying or academic performance, and they may create unnecessary costs for families. Students should have the freedom to dress appropriately while still expressing themselves within reasonable school guidelines."
+    }
+  },
+  {
+    "id": "public-transportation-investment",
+    "title": "Public Transportation Investment",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on urban planning. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "City governments often face difficult decisions when investing in transportation infrastructure. Some planners argue that public transportation systems such as buses, trains, and subways should receive greater funding because they reduce traffic congestion and environmental pollution. Others believe that roads and parking facilities remain essential because many people depend on private vehicles for work and daily activities. Since budgets are limited, governments cannot invest equally in every transportation option. Should cities prioritize public transportation, or should they focus more heavily on infrastructure designed for private vehicles?",
+      "studentA": "I think cities should prioritize public transportation. Reliable buses and trains make transportation more affordable and accessible, especially for people who cannot afford a car. Public transportation can also reduce traffic congestion and lower carbon emissions, which benefits the environment. As urban populations continue to grow, efficient transit systems become increasingly important. Investing in public transportation can improve quality of life while helping cities address long-term environmental and transportation challenges.",
+      "studentB": "I believe cities should continue investing heavily in roads and parking infrastructure. Many people rely on cars because public transportation is not always available, practical, or convenient. Families, delivery services, and workers often need the flexibility that private vehicles provide. Poor road conditions can increase travel times and create safety concerns. While public transportation is valuable, governments should recognize that cars will remain an important part of daily life for many residents."
+    }
+  },
+  {
+    "id": "online-learning-effectiveness",
+    "title": "Online Learning Effectiveness",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on digital education. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Online learning has become increasingly common at universities around the world. Supporters argue that online courses provide flexibility, reduce costs, and allow students to access educational opportunities regardless of their location. Critics, however, claim that virtual classes make it more difficult for students to stay engaged, participate in discussions, and build relationships with instructors and classmates. As educational institutions continue investing in digital learning technologies, an important question remains: can online learning be as effective as traditional classroom instruction, or does in-person education provide advantages that cannot easily be replaced?",
+      "studentA": "I believe online learning can be just as effective as traditional classroom instruction when courses are designed properly. Students can learn at their own pace, review recorded lectures multiple times, and access a wide variety of digital resources. Online education also makes learning more accessible for people who work full-time or live far from a university. While it requires self-discipline, the flexibility and convenience of online learning make it an excellent option for many students.",
+      "studentB": "I think traditional classroom learning remains more effective for most students. Face-to-face interaction encourages participation and allows students to ask questions immediately when they do not understand something. Being physically present also helps students stay focused and motivated. In addition, classroom environments provide opportunities for collaboration and social interaction that are often difficult to replicate online. For these reasons, I believe in-person education still offers important advantages."
+    }
+  },
+  {
+    "id": "government-support-for-artists",
+    "title": "Government Support for Artists",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on cultural policy. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many governments provide financial support to artists, musicians, writers, and cultural organizations. Supporters argue that public funding helps preserve cultural heritage, encourages creativity, and ensures that artistic projects can exist even when they are not commercially profitable. Critics believe that taxpayer money should be spent primarily on essential public services such as healthcare, education, and infrastructure. They argue that artists should rely on private funding or consumer demand. Given the limited resources available to governments, should public funds be used to support the arts, or should those resources be directed elsewhere?",
+      "studentA": "I think governments should continue funding the arts because culture plays an important role in society. Art helps people understand different perspectives, preserves history, and contributes to a community's identity. Many valuable artistic projects would never be created if they depended entirely on commercial success. Public funding ensures that cultural experiences remain available to everyone, not just people who can afford expensive tickets or private memberships. For these reasons, I believe government support is justified.",
+      "studentB": "Although I appreciate the value of art, I do not think governments should prioritize funding it. Public money should first address essential needs such as healthcare, education, transportation, and public safety. Artists have many alternative ways to obtain funding, including private sponsors, donations, and online platforms. Taxpayers may not agree with every project that receives public funding, which can create controversy. Therefore, I believe governments should focus on more urgent responsibilities."
+    }
+  },
+  {
+    "id": "student-phone-use",
+    "title": "Student Phone Use",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on educational technology. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Smartphones have become a common part of students' daily lives, including in schools and universities. Some educators believe phones can be useful learning tools because they provide quick access to information, educational applications, and communication platforms. Others argue that smartphones create distractions, reduce attention spans, and make it more difficult for students to focus during class. As educational institutions develop policies regarding technology use, should students be allowed to use smartphones during class, or should schools restrict their use in academic settings?",
+      "studentA": "I think students should be allowed to use smartphones during class when they serve an educational purpose. Phones provide instant access to research materials, dictionaries, calculators, and other useful resources. They can also help students stay organized by managing schedules and assignments. Instead of banning phones completely, schools should teach students how to use technology responsibly. Learning to manage distractions is an important skill that students will need throughout their academic and professional lives.",
+      "studentB": "I believe smartphones should be restricted during class because they are often more distracting than helpful. Even motivated students may be tempted to check social media, messages, or entertainment apps during lessons. These distractions can reduce learning and make it harder for teachers to maintain student engagement. Educational resources can usually be provided through school computers or other controlled systems. Therefore, limiting smartphone use would help create a more focused learning environment."
+    }
+  },
+  {
+    "id": "four-day-workweek",
+    "title": "Four-Day Workweek",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on labor economics. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Several companies around the world have experimented with four-day workweeks while maintaining the same employee salaries. Supporters argue that reducing the number of working days can improve employee well-being, reduce burnout, and increase productivity because workers are more focused during their time on the job. Critics worry that shorter workweeks may reduce output, increase costs, or create scheduling difficulties for businesses that need continuous coverage. As organizations search for ways to improve both employee satisfaction and business performance, should the four-day workweek become more widely adopted?",
+      "studentA": "I strongly support the idea of a four-day workweek. Many employees experience stress and exhaustion from balancing work with personal responsibilities. An additional day off each week would provide more time for rest, family activities, and personal development. Research from several pilot programs suggests that productivity often remains stable or even improves when employees work fewer days. Happier workers are generally more motivated, which can benefit both employees and employers.",
+      "studentB": "I am not convinced that a four-day workweek is practical for most organizations. Some industries require employees to be available throughout the week, and reducing workdays could create staffing challenges. Businesses might need to hire additional workers or pay overtime costs to maintain service levels. While the idea sounds attractive, it may not be suitable for every workplace. Companies should carefully evaluate their specific needs before adopting such a significant change."
+    }
+  },
+  {
+    "id": "mandatory-volunteering",
+    "title": "Mandatory Volunteering",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on civic responsibility. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many schools require students to complete a certain number of volunteer service hours before graduation. Supporters argue that these requirements encourage students to become active members of their communities, develop empathy, and gain valuable real-world experience. Critics believe that volunteering should be a personal choice rather than an obligation imposed by educational institutions. They argue that mandatory service may reduce the genuine spirit of volunteerism. Should schools require students to participate in volunteer activities before graduation, or should community service remain entirely voluntary?",
+      "studentA": "I think schools should require some volunteer service because it exposes students to experiences they might not otherwise have. Community service allows young people to understand local challenges and contribute positively to society. Many students discover new interests and career opportunities through volunteer work. Even if participation begins as a requirement, it can lead to long-term involvement and greater civic engagement. For these reasons, I believe volunteer service should be part of the educational experience.",
+      "studentB": "I disagree with mandatory volunteering because true volunteerism should come from personal motivation rather than external requirements. When students are forced to participate, they may focus only on completing the required hours rather than genuinely helping others. This can reduce the value of the experience for both students and organizations. Schools can encourage community involvement through education and incentives without making it a graduation requirement."
+    }
+  },
+  {
+    "id": "ai-tools-in-education",
+    "title": "AI Tools in Education",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on technology and society. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Artificial intelligence tools are becoming increasingly common in schools and universities. Some educators believe these tools can improve learning by providing personalized feedback, explaining complex concepts, and helping students organize their work more effectively. Others worry that widespread AI use could reduce critical thinking skills and make it difficult to determine whether students truly understand the material they submit. As educational institutions continue adapting to new technologies, should students be allowed to use AI tools for academic work, or should their use be heavily restricted?",
+      "studentA": "I believe students should be allowed to use AI tools because they can serve as powerful educational resources when used responsibly. AI systems can provide immediate feedback, explain difficult concepts in multiple ways, and help students identify weaknesses in their understanding. These tools are similar to calculators or search engines in that they support learning rather than replace it. Instead of banning AI, schools should teach students how to use it ethically and effectively as part of modern education.",
+      "studentB": "I think schools should place significant limits on AI use. Many students may become overly dependent on these tools and stop developing important skills such as writing, problem solving, and independent research. It can also be difficult for teachers to determine how much of a student's work was actually completed by the student. While AI offers benefits, educational institutions must ensure that technology supports learning rather than replacing the intellectual effort that education is meant to develop."
+    }
+  },
+  {
+    "id": "city-green-spaces",
+    "title": "City Green Spaces",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on environmental studies. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "As cities continue growing, local governments face difficult decisions about how to use limited land. Some urban planners argue that cities should preserve more land for parks, trees, and recreational areas because green spaces improve public health, reduce pollution, and enhance quality of life. Others believe that rapidly growing populations require additional housing and commercial development, making green spaces a lower priority. Given the competing demands for urban land, should cities prioritize expanding green spaces, or should housing and economic development receive greater attention?",
+      "studentA": "I think cities should prioritize green spaces because they provide benefits that extend far beyond recreation. Parks improve air quality, reduce urban heat, and create opportunities for exercise and social interaction. Research has also shown that access to nature can improve mental health and reduce stress. While housing is important, cities that ignore green space development may create environments that are less healthy and less enjoyable for residents. Long-term planning should include both environmental and economic considerations.",
+      "studentB": "Although parks are valuable, I believe housing and commercial development should be the higher priority. Many cities are experiencing severe housing shortages, which have contributed to rising costs and affordability problems. Businesses also create jobs and generate tax revenue that can support public services. If governments do not address these economic needs, residents may struggle to find affordable places to live and work. Green spaces are important, but basic housing needs should come first."
+    }
+  },
+  {
+    "id": "space-exploration-funding",
+    "title": "Space Exploration Funding",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on science policy. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Governments invest billions of dollars in space exploration programs each year. Supporters argue that these missions advance scientific knowledge, drive technological innovation, and may eventually help humanity address future challenges. Critics contend that public funds would be better spent addressing urgent problems on Earth, such as poverty, healthcare, and environmental protection. As governments evaluate their priorities, should they continue investing heavily in space exploration, or should more resources be redirected toward solving immediate social issues?",
+      "studentA": "I support continued investment in space exploration because scientific research often produces benefits that extend beyond its original goals. Technologies developed for space missions have contributed to advances in communication, medicine, and transportation. Space programs also inspire future scientists and engineers. While social challenges deserve attention, investing in scientific discovery can generate long-term benefits that improve society in ways that are not always immediately obvious. Exploration and innovation should remain important priorities.",
+      "studentB": "I believe governments should focus more on problems that directly affect people's daily lives. Millions of individuals struggle with issues such as inadequate healthcare, housing shortages, and economic insecurity. While space exploration is exciting, its benefits are often uncertain and may not appear for many years. Public resources are limited, and governments should prioritize programs that produce immediate improvements in quality of life. Addressing existing social challenges should come before funding expensive space missions."
+    }
+  },
+  {
+    "id": "universal-basic-income",
+    "title": "Universal Basic Income",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on economics. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Universal Basic Income, often called UBI, is a policy proposal in which all citizens receive a regular payment from the government regardless of employment status or income level. Supporters argue that UBI could reduce poverty, simplify welfare programs, and provide financial security in an economy increasingly affected by automation. Critics worry that such programs would be expensive, reduce incentives to work, and place significant pressure on government budgets. Should governments implement a universal basic income program, or are there better ways to support citizens in need?",
+      "studentA": "I think Universal Basic Income deserves serious consideration because it could provide a financial safety net for everyone. Many workers face uncertainty due to automation and changing labor markets. A guaranteed income could help people meet basic needs while pursuing education, training, or entrepreneurship. Existing welfare systems are often complicated and expensive to administer. A simpler approach could reduce bureaucracy while ensuring that fewer people fall into poverty during periods of economic transition.",
+      "studentB": "I am skeptical about Universal Basic Income because of the potential costs involved. Providing payments to every citizen would require enormous government spending, which could lead to higher taxes or increased public debt. I am also concerned that some individuals might be less motivated to seek employment if they receive guaranteed income regardless of their effort. Instead of giving money to everyone, governments should focus resources on targeted programs for those who genuinely need assistance."
+    }
+  },
+  {
+    "id": "animal-testing-research",
+    "title": "Animal Testing in Research",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on biomedical ethics. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Animal testing has played an important role in the development of many medical treatments and scientific discoveries. Supporters argue that testing on animals is often necessary to ensure the safety and effectiveness of new medicines before they are used on humans. Critics believe that animal testing raises serious ethical concerns and that modern technology may provide alternative research methods. As science continues to advance, should animal testing remain an accepted part of medical research, or should researchers move toward eliminating it whenever possible?",
+      "studentA": "I believe animal testing should remain available in certain situations because it has contributed to many important medical breakthroughs. Before new treatments are tested on humans, researchers need evidence that they are reasonably safe. Although animal testing should be carefully regulated to minimize suffering, completely eliminating it could slow medical progress and make it more difficult to develop life-saving therapies. Until reliable alternatives exist for every situation, responsible animal testing remains an important scientific tool.",
+      "studentB": "I think researchers should work toward eliminating animal testing whenever possible. Advances in computer modeling, laboratory-grown tissues, and other technologies are creating alternatives that may reduce the need for animal experiments. Animals cannot consent to participation, and many people believe it is unethical to expose them to potentially harmful procedures. Scientific progress is important, but it should not come at the expense of unnecessary suffering. Greater investment in alternative research methods would benefit both science and animal welfare."
+    }
+  },
+  {
+    "id": "renewable-energy-priorities",
+    "title": "Renewable Energy Priorities",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on environmental science. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many countries are investing heavily in renewable energy sources such as solar, wind, and hydroelectric power. Supporters argue that renewable energy is essential for reducing greenhouse gas emissions and limiting the effects of climate change. Critics point out that renewable energy systems can be expensive to build, may not always provide reliable power, and often require government subsidies. As nations work to balance environmental goals with economic realities, should governments prioritize investments in renewable energy, or should they continue relying on traditional energy sources while improvements are developed?",
+      "studentA": "I believe governments should prioritize renewable energy because the long-term environmental benefits outweigh the initial costs. Climate change is a global challenge, and reducing emissions requires significant changes to how energy is produced. Although renewable infrastructure can be expensive, technological improvements are making these systems more efficient and affordable each year. Investing now can reduce future environmental damage while creating new industries and employment opportunities. Delaying the transition could make environmental problems even more difficult and expensive to solve.",
+      "studentB": "I agree that renewable energy is important, but I do not think governments should move too quickly away from traditional energy sources. Many economies still depend on reliable and affordable energy that renewable systems cannot always provide. Sudden transitions could increase energy costs for households and businesses. Governments should continue investing in renewable technologies while maintaining a balanced energy mix. This approach would allow countries to reduce emissions gradually without creating unnecessary economic disruptions."
+    }
+  },
+  {
+    "id": "self-driving-cars",
+    "title": "Self-Driving Cars",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on transportation technology. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Autonomous vehicles, often called self-driving cars, are becoming increasingly advanced. Supporters argue that these vehicles could reduce traffic accidents, improve transportation efficiency, and provide greater mobility for elderly or disabled individuals. Critics worry about safety risks, technical failures, cybersecurity concerns, and the potential loss of jobs in transportation industries. As governments and companies continue testing autonomous driving systems, should self-driving cars become a major part of future transportation networks, or should society proceed more cautiously before widespread adoption?",
+      "studentA": "I support the development of self-driving cars because they have the potential to make transportation significantly safer. Human error is responsible for many traffic accidents, and autonomous systems may eventually reduce those mistakes. These vehicles could also help people who cannot drive due to age or physical limitations. While technical challenges still exist, innovation often requires gradual improvement. With proper testing and regulation, self-driving technology could provide substantial benefits for society.",
+      "studentB": "I think society should be cautious about adopting self-driving cars too quickly. Even advanced systems can fail unexpectedly, and software errors may have serious consequences when human lives are involved. There are also concerns about hacking and the security of connected vehicles. In addition, widespread automation could affect millions of workers who depend on driving-related jobs. Before autonomous vehicles become common, governments should ensure that safety and social concerns are fully addressed."
+    }
+  },
+  {
+    "id": "university-attendance-policies",
+    "title": "University Attendance Policies",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on higher education. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Universities have different approaches to class attendance. Some institutions require students to attend lectures regularly and include attendance as part of the final grade. Others believe university students should be responsible for managing their own schedules and deciding whether attending class is beneficial. Supporters of mandatory attendance argue that it improves learning outcomes and participation, while critics say it treats adults like children and limits personal responsibility. Should universities require attendance in most courses, or should students decide for themselves whether to attend?",
+      "studentA": "I think universities should require attendance in many courses because students generally learn more when they participate actively in class discussions and activities. Regular attendance helps students stay engaged with the material and reduces the likelihood of falling behind. It also encourages interaction between students and professors. Although university students are adults, educational institutions have a responsibility to create conditions that support academic success. Attendance requirements can help achieve that goal.",
+      "studentB": "I believe students should be free to decide whether attending class is necessary. University education differs from high school because students are expected to take responsibility for their own learning. Some students learn effectively through independent study and may not benefit equally from attending every lecture. Mandatory attendance policies can also be unfair to students who work part-time or have other obligations. Universities should evaluate students based on performance rather than physical presence."
+    }
+  },
+  {
+    "id": "social-media-regulation",
+    "title": "Social Media Regulation",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on media studies. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Social media platforms have become major sources of news, communication, and entertainment. Some people argue that governments should regulate these platforms more aggressively to combat misinformation, protect users, and reduce harmful content. Others believe increased regulation could threaten free expression and give governments too much control over public discussion. As social media continues to influence society, what role should governments play in regulating online platforms? Should regulation be expanded, or should companies and users remain primarily responsible?",
+      "studentA": "I think governments should play a stronger role in regulating social media platforms. Misinformation can spread quickly and influence public opinion on important topics such as health, elections, and public safety. Large technology companies often prioritize engagement and profit, which may not always align with the public interest. Reasonable regulations could improve transparency and accountability while helping protect users from harmful content. Government oversight is necessary when private companies have such significant influence over society.",
+      "studentB": "I am concerned that increased government regulation could create unintended consequences. Determining what content should be restricted is often subjective, and governments may be tempted to limit viewpoints they disagree with. Free expression is an important value in democratic societies, and excessive regulation could threaten open discussion. Rather than relying on government intervention, social media companies should improve their moderation systems while users develop stronger critical thinking skills to evaluate information independently."
+    }
+  },
+  {
+    "id": "corporate-environmental-responsibility",
+    "title": "Corporate Environmental Responsibility",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on business ethics. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many consumers expect companies to reduce their environmental impact by adopting sustainable business practices. Some argue that corporations have a moral responsibility to address environmental issues even when doing so increases costs. Others believe that a company's primary responsibility is to its shareholders and that environmental improvements should occur only when they are economically practical. As environmental concerns become more prominent, should businesses be expected to prioritize sustainability, or should profitability remain their main objective?",
+      "studentA": "I believe companies should take environmental responsibility seriously, even if it sometimes increases costs. Businesses benefit from society's resources and infrastructure, so they should contribute to protecting the environment for future generations. Sustainable practices can also strengthen a company's reputation and encourage long-term thinking. While profitability is important, focusing exclusively on short-term financial results can create larger environmental and economic problems in the future. Responsible businesses should balance profit with social and environmental considerations.",
+      "studentB": "I think profitability should remain the primary objective of businesses. Companies that are not financially successful cannot provide jobs, create products, or contribute to economic growth. Environmental improvements are important, but they should be implemented in ways that remain economically sustainable. Governments can establish regulations that apply equally to all businesses, creating clear standards. Expecting individual companies to sacrifice competitiveness for environmental goals may place them at a disadvantage compared with less responsible competitors."
+    }
+  },
+  {
+    "id": "cashless-society",
+    "title": "Moving Toward a Cashless Society",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on economics. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many countries have seen a rapid increase in digital payments over the past decade. Credit cards, mobile payment applications, and online banking have reduced the need for physical cash in daily transactions. Supporters of a cashless society argue that digital payments are more convenient, efficient, and secure. Critics, however, worry about privacy concerns, technological dependence, and the exclusion of people who may not have access to digital financial services. Should societies continue moving toward a fully cashless economy, or should physical cash remain an essential part of the financial system?",
+      "studentA": "I support the transition toward a cashless society because digital payments make everyday transactions faster and more convenient. Consumers no longer need to carry large amounts of cash, and businesses can process payments more efficiently. Digital systems also create records that can help reduce certain types of financial crime. Although some challenges exist, technology continues to improve, and governments can create programs that help people adapt. Overall, I believe the benefits of a cashless economy outweigh the disadvantages.",
+      "studentB": "I think physical cash should remain available because it provides important benefits that digital systems cannot fully replace. Cash allows people to make purchases without sharing personal data and can be used even when technology fails. Some individuals, especially older adults or people in rural areas, may have limited access to digital banking services. Eliminating cash could create barriers for these groups. For these reasons, I believe societies should maintain both digital and traditional payment options."
+    }
+  },
+  {
+    "id": "genetically-modified-foods",
+    "title": "Genetically Modified Foods",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on agricultural science. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Genetically modified crops have become an important part of modern agriculture. Scientists can alter the genetic characteristics of plants to improve yields, increase resistance to pests, and reduce the need for certain agricultural chemicals. Supporters argue that genetically modified foods can help address food shortages and improve farming efficiency. Critics worry about potential environmental effects, long-term health concerns, and the influence of large agricultural corporations. Should genetically modified foods play a larger role in global food production, or should their use be limited until more research is available?",
+      "studentA": "I believe genetically modified foods can make an important contribution to global food security. As the world's population continues to grow, farmers need efficient ways to produce more food using limited land and resources. Genetically modified crops can help reduce crop losses and improve productivity. Scientific organizations have generally found currently approved products to be safe for consumption. While continued monitoring is important, I think the potential benefits justify their responsible use.",
+      "studentB": "I am more cautious about expanding the use of genetically modified foods. Although they may offer advantages, there are still questions about their long-term environmental impact and the concentration of control within large agricultural companies. Farmers may become dependent on patented seeds and technologies. Before increasing adoption, governments and researchers should conduct additional studies and establish strong regulations. Taking a careful approach would help ensure that agricultural innovation does not create unintended problems."
+    }
+  },
+  {
+    "id": "historical-monuments-preservation",
+    "title": "Preserving Historical Monuments",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on history. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Historical monuments often represent important events, individuals, or cultural traditions from the past. However, some monuments have become controversial because they commemorate people whose actions or beliefs are now viewed negatively by many members of society. Some argue that these monuments should remain in place because they are part of history and provide opportunities for education. Others believe that public spaces should not honor individuals associated with harmful actions or ideas. Should controversial historical monuments be preserved, removed, or relocated to other settings such as museums?",
+      "studentA": "I think controversial monuments should generally be preserved because they provide opportunities to learn about history. Removing monuments may make it easier for future generations to forget important events and the lessons associated with them. Instead of removing these structures, communities could add educational materials that provide historical context and encourage discussion. Understanding history requires acknowledging both positive and negative aspects of the past, and monuments can help support that process.",
+      "studentB": "I believe some controversial monuments should be relocated to museums rather than displayed in prominent public spaces. Public monuments often celebrate individuals and values, and communities should carefully consider what messages they send. Museums can provide historical context while allowing people to study the past without presenting certain figures as role models. Relocating monuments can balance historical preservation with the concerns of people who feel harmed or excluded by their presence in public areas."
+    }
+  },
+  {
+    "id": "mandatory-financial-education",
+    "title": "Financial Education in Schools",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on education. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "Many adults struggle with financial decisions involving budgeting, saving, investing, and managing debt. As a result, some educators believe that personal finance should become a required subject in secondary schools. Supporters argue that financial education would better prepare students for adulthood and help them avoid costly mistakes. Critics believe that schools already have crowded curricula and that financial skills can be learned outside the classroom. Should schools require all students to complete financial education courses before graduation?",
+      "studentA": "I strongly support mandatory financial education because many young adults enter the workforce without understanding basic financial concepts. Learning how to create a budget, manage credit, and save for long-term goals can have a major impact on future financial stability. Schools prepare students for many aspects of life, and personal finance is one of the most practical subjects they can teach. Requiring these courses could help students make more informed decisions throughout adulthood.",
+      "studentB": "Although financial literacy is important, I am not sure it should be a required subject for every student. School schedules are already full, and adding new mandatory courses may require reducing time spent on other important subjects. Financial information also changes over time, meaning students may need to continue learning after graduation anyway. Rather than making personal finance mandatory, schools could offer elective courses and online resources for students who are interested."
+    }
+  },
+  {
+    "id": "international-tourism-impact",
+    "title": "The Impact of International Tourism",
+    "category": "Academic Discussion Question",
+    "type": "academic-discussion",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The professor is teaching a class on global studies. Write a post responding to the professor’s question.</p><p>In your response, you should do the following.</p><ul><li>Express and support your opinion.</li><li>Make a contribution to the discussion in your own words.</li></ul><p>An effective response will contain at least 100 words.</p>",
+    "discussion": {
+      "professor": "International tourism has become a major part of the global economy. It creates jobs, generates income for local businesses, and allows people to experience different cultures. However, large numbers of visitors can also place pressure on infrastructure, increase housing costs, and contribute to environmental damage in popular destinations. As tourism continues growing in many parts of the world, governments and communities must decide how to manage its effects. Do the benefits of international tourism outweigh the drawbacks, or should governments impose stronger limits on tourism activity?",
+      "studentA": "I think the benefits of international tourism generally outweigh the disadvantages. Tourism supports millions of jobs and provides important economic opportunities for communities that might otherwise have limited sources of income. It also encourages cultural exchange and helps people develop a better understanding of different societies. While tourism can create challenges, governments can address many of these issues through planning, environmental regulations, and investment in infrastructure. Proper management is more effective than restricting tourism altogether.",
+      "studentB": "I believe stronger limits on tourism may be necessary in some locations. Popular destinations often experience overcrowding, rising housing costs, and environmental degradation as visitor numbers increase. Local residents may find it more difficult to afford housing or maintain their quality of life. Economic benefits are important, but governments should also protect communities and natural resources. In certain cases, limiting visitor numbers may be the most sustainable long-term solution."
+    }
+  }
+]

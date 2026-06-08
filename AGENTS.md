@@ -1,0 +1,3 @@
+- refer to markdown folder for information about product, project decisions or engineering guidelines.
+- always commit and push after each turn. Use conventioanl commit messages.
+- don't stack cards inside of cards

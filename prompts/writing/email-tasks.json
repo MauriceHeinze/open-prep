@@ -1,0 +1,263 @@
+[
+  {
+    "id": "wrong-headphones-delivered",
+    "title": "Wrong Headphones Delivered",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently ordered a pair of wireless headphones from an online electronics store called TechWorld. The package arrived yesterday, but when you opened it, you found a different, cheaper model than the one you selected on the website. You have not used the headphones yet and still have all the original packaging.</p><p>Write an email to TechWorld’s customer service department. In your email, do the following:</p><ul><li>Clearly explain the problem, including what you ordered, what you received, and when the package arrived.</li><li>Ask how they will resolve the issue, and whether there will be any additional cost to you.</li><li>Request a specific timeline for when you can expect a reply and a solution.</li></ul>"
+  },
+  {
+    "id": "wrong-essay-version-graded",
+    "title": "Wrong Essay Version Graded",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You are a student in Professor Kim’s sociology class. Last week, you submitted your midterm essay via the class website. Yesterday, you checked your grade and were surprised to see it was much lower than you expected. When you opened the file that was graded, you realized it was an older draft of your essay, not the final version. You still have the correct final version saved on your computer.</p><p>Write an email to Professor Kim. In your email, do the following:</p><ul><li>Clearly explain the problem and how you noticed that the wrong version was graded.</li><li>Ask if you can send the final version and have your grade changed.</li><li>Ask when you can expect a reply.</li></ul>"
+  },
+  {
+    "id": "library-book-damage-fee",
+    "title": "Library Damage Fee",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently returned a book to your university library. Today, you received an email stating that the book was damaged and that you must pay a replacement fee. However, you are certain that the book was in good condition when you returned it. You even remember handing it directly to a library employee at the service desk.</p><p>Write an email to the university library. In your email, do the following:</p><ul><li>Explain why you believe the fee was issued by mistake.</li><li>Ask what evidence they have that the book was damaged.</li><li>Request information about how and when the issue can be reviewed.</li></ul>"
+  },
+  {
+    "id": "cancelled-study-abroad-meeting",
+    "title": "Cancelled Study Abroad Meeting",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You are planning to participate in a study abroad program next semester. Last month, you scheduled an appointment with an advisor from the international office to discuss application requirements. When you arrived for the meeting today, you learned that it had been cancelled, but nobody informed you in advance. You traveled a long distance to attend the appointment.</p><p>Write an email to the international office. In your email, do the following:</p><ul><li>Describe what happened and why the situation was inconvenient for you.</li><li>Ask why you were not notified about the cancellation.</li><li>Request a new appointment and ask when you can expect a response.</li></ul>"
+  },
+  {
+    "id": "missing-conference-certificate",
+    "title": "Missing Conference Certificate",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You attended an online academic conference two weeks ago. Participants who completed all sessions were supposed to receive a certificate of attendance by email. Several of your classmates have already received theirs, but you have not.</p><p>Write an email to the conference organizers. In your email, do the following:</p><ul><li>Explain the situation and mention that you attended all required sessions.</li><li>Ask why you have not received your certificate.</li><li>Request information about when the issue will be resolved.</li></ul>"
+  },
+  {
+    "id": "gym-membership-billing-error",
+    "title": "Gym Membership Billing Error",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently checked your bank account and noticed that your gym charged you twice for last month's membership fee. According to your membership agreement, you should only be charged once per month.</p><p>Write an email to the gym's billing department. In your email, do the following:</p><ul><li>Describe the billing error and how you discovered it.</li><li>Ask how the extra charge will be refunded.</li><li>Request a timeline for receiving a response and the refund.</li></ul>"
+  },
+  {
+    "id": "group-project-missing-name",
+    "title": "Missing Name on Group Project",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently completed a group project for one of your university courses. When the grades were posted, you noticed that your name was not listed as a member of the group, even though you contributed significantly to the project.</p><p>Write an email to your instructor. In your email, do the following:</p><ul><li>Explain the situation and describe your contribution to the project.</li><li>Ask how your participation can be verified.</li><li>Request information about when your grade can be updated.</li></ul>"
+  },
+  {
+    "id": "hotel-room-not-available",
+    "title": "Hotel Room Not Available",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You booked a hotel room several weeks ago for an upcoming trip. Today, you received a message stating that the room type you reserved is no longer available, even though your reservation was confirmed and paid for.</p><p>Write an email to the hotel manager. In your email, do the following:</p><ul><li>Explain the problem and refer to your confirmed reservation.</li><li>Ask what alternatives the hotel can provide.</li><li>Request a response and a solution before your arrival date.</li></ul>"
+  },
+  {
+    "id": "late-scholarship-payment",
+    "title": "Late Scholarship Payment",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You were awarded a university scholarship that was supposed to be paid at the beginning of the semester. Several weeks have passed, and the payment has still not appeared in your account. You depend on this money to cover educational expenses.</p><p>Write an email to the financial aid office. In your email, do the following:</p><ul><li>Explain the situation and why the delay is causing difficulties.</li><li>Ask whether there is a problem with your scholarship payment.</li><li>Request an estimate of when you can expect a reply and the payment.</li></ul>"
+  },
+  {
+    "id": "lost-luggage-airline",
+    "title": "Lost Luggage",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently took a flight to attend an academic event. When you arrived at your destination, your checked suitcase did not arrive with the rest of the luggage. The suitcase contains clothes, study materials, and personal items that you need during your trip.</p><p>Write an email to the airline's customer service department. In your email, do the following:</p><ul><li>Explain what happened and provide details about your flight.</li><li>Ask what steps are being taken to locate your luggage.</li><li>Request information about when you can expect an update.</li></ul>"
+  },
+  {
+    "id": "internet-service-outage",
+    "title": "Internet Service Outage",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>Your home internet service has not worked for the past three days. You have already restarted your equipment several times and checked the provider's website, but the issue remains unresolved. You rely on the internet for your online classes.</p><p>Write an email to your internet service provider. In your email, do the following:</p><ul><li>Describe the problem and how it is affecting you.</li><li>Explain what troubleshooting steps you have already taken.</li><li>Ask when the service will be restored and when you can expect a reply.</li></ul>"
+  },
+  {
+    "id": "missing-course-registration",
+    "title": "Missing Course Registration",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You successfully registered for a university course several weeks ago. Today, when you checked your student portal, you noticed that the course no longer appears on your schedule. Registration for the course is now closed.</p><p>Write an email to the registrar's office. In your email, do the following:</p><ul><li>Explain the situation and why you believe an error occurred.</li><li>Ask how your registration status can be verified.</li><li>Request information about when the issue can be corrected.</li></ul>"
+  },
+  {
+    "id": "faulty-laptop-repair",
+    "title": "Faulty Laptop Repair",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently paid a computer repair shop to fix your laptop. After getting it back yesterday, you discovered that the original problem still exists and that the laptop occasionally shuts down unexpectedly.</p><p>Write an email to the repair shop manager. In your email, do the following:</p><ul><li>Describe the problem and the repair service you received.</li><li>Ask whether additional repairs will be necessary.</li><li>Request a timeline for resolving the issue.</li></ul>"
+  },
+  {
+    "id": "missing-online-order",
+    "title": "Missing Online Order",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You ordered several textbooks from an online bookstore. According to the tracking information, the package was delivered yesterday. However, you have checked around your home and spoken with neighbors, but nobody has seen the package.</p><p>Write an email to the bookstore. In your email, do the following:</p><ul><li>Explain the situation and provide details about the order.</li><li>Ask what options are available if the package cannot be found.</li><li>Request information about when you can expect a response.</li></ul>"
+  },
+  {
+    "id": "campus-parking-fine",
+    "title": "Campus Parking Fine",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently received a parking fine from your university. However, you believe the ticket was issued incorrectly because your parking permit was clearly displayed in your vehicle at the time.</p><p>Write an email to the campus parking office. In your email, do the following:</p><ul><li>Explain why you believe the fine was issued by mistake.</li><li>Ask what evidence is available regarding the violation.</li><li>Request information about the appeal process and response timeline.</li></ul>"
+  },
+  {
+    "id": "delayed-passport-renewal",
+    "title": "Delayed Passport Renewal",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You applied to renew your passport more than eight weeks ago. According to the official processing time, it should have already been completed. You have an international trip planned next month.</p><p>Write an email to the passport office. In your email, do the following:</p><ul><li>Explain your situation and upcoming travel plans.</li><li>Ask about the status of your application.</li><li>Request information about when you can expect a response and completion date.</li></ul>"
+  },
+  {
+    "id": "broken-dorm-heating",
+    "title": "Broken Dorm Heating",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>The heating system in your university dormitory room has not worked properly for over a week. Despite reporting the issue through the maintenance portal, nobody has contacted you and the problem remains unresolved.</p><p>Write an email to the housing office. In your email, do the following:</p><ul><li>Describe the problem and how long it has existed.</li><li>Explain how it is affecting your daily life and studies.</li><li>Ask when repairs will be completed and when you can expect a reply.</li></ul>"
+  },
+  {
+    "id": "incorrect-bank-fee",
+    "title": "Incorrect Bank Fee",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently noticed an unexpected service fee on your bank statement. According to your account agreement, this fee should not apply to your account type. You have reviewed your documents and believe a mistake was made.</p><p>Write an email to your bank. In your email, do the following:</p><ul><li>Explain the fee and why you believe it is incorrect.</li><li>Ask how the charge can be investigated.</li><li>Request information about when you can expect a response and refund if applicable.</li></ul>"
+  },
+  {
+    "id": "unavailable-research-material",
+    "title": "Unavailable Research Material",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You reserved a piece of specialized research equipment at your university several weeks ago. When you arrived at the laboratory today, you were told that the equipment was unavailable because it had been assigned to another student.</p><p>Write an email to the laboratory coordinator. In your email, do the following:</p><ul><li>Explain what happened and why it is a problem.</li><li>Ask why your reservation was not honored.</li><li>Request a new reservation and ask when you can expect a reply.</li></ul>"
+  },
+  {
+    "id": "missing-internship-certificate",
+    "title": "Missing Internship Certificate",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You completed a summer internship three weeks ago. At the end of the program, the company promised to send all interns a certificate of completion that could be used for future job and university applications. Several of your friends have already received their certificates, but you have not received yours yet.</p><p>Write an email to the internship coordinator. In your email, do the following:</p><ul><li>Explain the situation and why the certificate is important to you.</li><li>Ask whether there has been a delay or problem with your certificate.</li><li>Request information about when you can expect a reply and receive the document.</li></ul>"
+  },
+  {
+    "id": "incorrect-hotel-charge",
+    "title": "Incorrect Hotel Charge",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently stayed at a hotel while attending a conference. After returning home, you reviewed your credit card statement and noticed an additional charge for services that you never used. You still have your reservation confirmation and receipt.</p><p>Write an email to the hotel's customer service department. In your email, do the following:</p><ul><li>Describe the unexpected charge and explain why you believe it is incorrect.</li><li>Ask how the charge will be investigated and corrected.</li><li>Request information about when you can expect a response and a refund.</li></ul>"
+  },
+  {
+    "id": "course-material-access-problem",
+    "title": "Unable to Access Course Materials",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently enrolled in an online university course. Although classes started this week, you are unable to access the course materials through the learning platform. Several assignments are due soon, and you are worried about falling behind.</p><p>Write an email to the university's technical support team. In your email, do the following:</p><ul><li>Explain the problem and how long it has been occurring.</li><li>Describe any steps you have already taken to solve the issue.</li><li>Ask when you can expect assistance and access to the course materials.</li></ul>"
+  },
+  {
+    "id": "damaged-rental-bicycle",
+    "title": "Damaged Rental Bicycle",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You rented a bicycle from a bike-sharing company while visiting another city. Shortly after beginning your ride, you noticed that the brakes were not functioning properly. You returned the bicycle immediately and reported the issue through the company's app, but you were still charged for the rental period.</p><p>Write an email to the bike-sharing company. In your email, do the following:</p><ul><li>Describe what happened and why you believe the charge is unfair.</li><li>Ask what the company plans to do about the faulty bicycle.</li><li>Request information about when you can expect a response and a refund.</li></ul>"
+  },
+  {
+    "id": "cancelled-training-workshop",
+    "title": "Cancelled Professional Workshop",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You registered and paid for a professional training workshop that was scheduled to take place this weekend. Yesterday, you received a message informing participants that the event had been cancelled. However, the message did not explain whether participants would receive refunds or be offered alternative dates.</p><p>Write an email to the workshop organizer. In your email, do the following:</p><ul><li>Explain your concerns regarding the cancellation.</li><li>Ask whether you will receive a refund or another opportunity to attend.</li><li>Request information about when you can expect a detailed response.</li></ul>"
+  },
+  {
+    "id": "missing-package-locker",
+    "title": "Missing Package from Delivery Locker",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You ordered a package online and selected a self-service delivery locker as the delivery location. Yesterday, you received a notification saying the package had been delivered. However, when you visited the locker and entered the access code, the compartment was empty.</p><p>Write an email to the delivery company. In your email, do the following:</p><ul><li>Explain what happened and provide details about the delivery.</li><li>Ask how the company plans to investigate the issue.</li><li>Request information about when you can expect a response and a solution.</li></ul>"
+  },
+  {
+    "id": "incorrect-exam-schedule",
+    "title": "Incorrect Exam Schedule",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently checked your university exam schedule and noticed that two of your final exams are scheduled for the same time. According to university policy, students should not be required to take overlapping exams. The registration deadline has already passed.</p><p>Write an email to the university examinations office. In your email, do the following:</p><ul><li>Describe the scheduling conflict and why it is a problem.</li><li>Ask how the university plans to resolve the issue.</li><li>Request information about when you can expect a reply and an updated schedule.</li></ul>"
+  },
+  {
+    "id": "fitness-membership-cancellation",
+    "title": "Gym Membership Cancellation Problem",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You cancelled your gym membership last month and received confirmation that the cancellation had been processed. Today, you noticed that another monthly membership fee was charged to your bank account. You still have a copy of the cancellation confirmation email.</p><p>Write an email to the gym's customer service department. In your email, do the following:</p><ul><li>Explain the situation and mention the cancellation confirmation.</li><li>Ask why the charge was processed despite the cancellation.</li><li>Request information about when you can expect a refund and a response.</li></ul>"
+  },
+  {
+    "id": "lost-item-public-transport",
+    "title": "Lost Item on Public Transportation",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently traveled by train and accidentally left a backpack on board. The backpack contains textbooks, personal documents, and a laptop. You realized the mistake shortly after leaving the station and reported it through the transportation company's website.</p><p>Write an email to the transportation company's lost-and-found department. In your email, do the following:</p><ul><li>Describe the item you lost and where you believe you left it.</li><li>Ask whether the backpack has been located.</li><li>Request information about when you can expect an update and how you can recover the item.</li></ul>"
+  },
+  {
+    "id": "incorrect-mobile-phone-bill",
+    "title": "Incorrect Mobile Phone Bill",
+    "category": "Email",
+    "type": "email",
+    "examType": "toefl",
+    "sectionType": "writing",
+    "scenario": "<p>You recently received your monthly mobile phone bill and noticed several charges for international calls. However, you have not made any international calls during the billing period. The unexpected charges have significantly increased the total amount due.</p><p>Write an email to your mobile phone provider. In your email, do the following:</p><ul><li>Explain why you believe the charges are incorrect.</li><li>Ask how the charges will be reviewed and corrected.</li><li>Request information about when you can expect a response and an updated bill.</li></ul>"
+  }
+]
