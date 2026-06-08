@@ -1,9 +1,1 @@
-"use strict";
-const electron = require("electron");
-const openPrepApi = {
-  listPromptCatalog: () => electron.ipcRenderer.invoke("prompt-catalog:list"),
-  getPromptDetails: (promptId) => electron.ipcRenderer.invoke("prompt-catalog:get", promptId),
-  submitWritingAttempt: (input) => electron.ipcRenderer.invoke("writing:submit", input),
-  getAttemptDetails: (attemptId) => electron.ipcRenderer.invoke("attempts:get", attemptId)
-};
-electron.contextBridge.exposeInMainWorld("openPrepApi", openPrepApi);
+"use strict";const t=require("electron"),i={listPromptCatalog:()=>t.ipcRenderer.invoke("prompt-catalog:list"),getPromptDetails:e=>t.ipcRenderer.invoke("prompt-catalog:get",e),submitWritingAttempt:e=>t.ipcRenderer.invoke("writing:submit",e),getAttemptDetails:e=>t.ipcRenderer.invoke("attempts:get",e)};t.contextBridge.exposeInMainWorld("openPrepApi",i);
