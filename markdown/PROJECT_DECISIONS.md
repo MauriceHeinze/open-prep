@@ -152,6 +152,7 @@ Tradeoffs:
 Note:
 
 - The exact provider command shape should be finalized during implementation against the locally installed provider CLI behavior.
+- Codex-backed writing evaluation uses a five-minute default timeout and can be overridden with `OPEN_PREP_CODEX_TIMEOUT_MS` for slower local setups.
 
 ## App Architecture
 

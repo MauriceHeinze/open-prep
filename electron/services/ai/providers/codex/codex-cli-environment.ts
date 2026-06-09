@@ -27,6 +27,17 @@ export const resolveCodexCommand = (): string => {
   return configuredCommand && configuredCommand.length > 0 ? configuredCommand : 'codex';
 };
 
+export const resolveCodexTimeoutMs = (
+  environment: Record<string, string | undefined> = process.env,
+): number => {
+  const fallbackTimeoutMs = 300_000;
+  const configuredTimeoutMs = Number(environment.OPEN_PREP_CODEX_TIMEOUT_MS);
+
+  return Number.isFinite(configuredTimeoutMs) && configuredTimeoutMs > 0
+    ? configuredTimeoutMs
+    : fallbackTimeoutMs;
+};
+
 export const buildCodexEnvironment = (
   environment: Record<string, string | undefined> = process.env,
 ): Record<string, string | undefined> => {

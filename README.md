@@ -114,6 +114,13 @@ For local UI work without a live AI call:
 OPEN_PREP_AI_PROVIDER=mock npm run dev
 ```
 
+Codex-backed evaluation uses a five-minute timeout by default. If your local Codex setup
+regularly needs more time, override it in milliseconds:
+
+```bash
+OPEN_PREP_CODEX_TIMEOUT_MS=600000 npm run dev
+```
+
 Useful checks:
 
 ```bash

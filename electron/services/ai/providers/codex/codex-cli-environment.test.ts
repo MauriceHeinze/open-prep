@@ -7,6 +7,7 @@ import {
   buildCodexEnvironment,
   buildCodexNotFoundMessage,
   resolveCodexCommand,
+  resolveCodexTimeoutMs,
 } from './codex-cli-environment';
 
 describe('codex CLI environment', () => {
@@ -24,6 +25,19 @@ describe('codex CLI environment', () => {
     vi.stubEnv('OPEN_PREP_CODEX_PATH', '/custom/bin/codex');
 
     expect(resolveCodexCommand()).toBe('/custom/bin/codex');
+  });
+
+  it('uses a five minute Codex evaluation timeout by default', () => {
+    expect(resolveCodexTimeoutMs({})).toBe(300_000);
+  });
+
+  it('allows an explicit Codex evaluation timeout', () => {
+    expect(resolveCodexTimeoutMs({ OPEN_PREP_CODEX_TIMEOUT_MS: '450000' })).toBe(450_000);
+  });
+
+  it('falls back to the default timeout when the configured value is invalid', () => {
+    expect(resolveCodexTimeoutMs({ OPEN_PREP_CODEX_TIMEOUT_MS: 'soon' })).toBe(300_000);
+    expect(resolveCodexTimeoutMs({ OPEN_PREP_CODEX_TIMEOUT_MS: '-1' })).toBe(300_000);
   });
 
   it('adds common user CLI directories before the packaged app PATH', () => {

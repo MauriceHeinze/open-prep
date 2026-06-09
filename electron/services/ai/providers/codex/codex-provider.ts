@@ -15,10 +15,10 @@ import {
   buildCodexEnvironment,
   buildCodexNotFoundMessage,
   resolveCodexCommand,
+  resolveCodexTimeoutMs,
 } from './codex-cli-environment';
 import { loadCodexSystemPrompt } from './codex-system-prompt';
 
-const CODEX_TIMEOUT_MS = 90_000;
 const CODEX_MODEL = 'gpt-5.4-mini';
 const CODEX_REASONING_EFFORT = 'low';
 
@@ -87,10 +87,19 @@ export class CodexProvider implements AiProvider {
       });
 
       let stderr = '';
+      const timeoutMs = resolveCodexTimeoutMs(codexEnvironment);
       const timeout = setTimeout(() => {
         child.kill('SIGTERM');
-        reject(new Error('Codex evaluation timed out.'));
-      }, CODEX_TIMEOUT_MS);
+        const diagnostic = stderr.trim();
+
+        reject(
+          new Error(
+            diagnostic.length > 0
+              ? `Codex evaluation timed out after ${String(timeoutMs)}ms. ${diagnostic}`
+              : `Codex evaluation timed out after ${String(timeoutMs)}ms.`,
+          ),
+        );
+      }, timeoutMs);
 
       child.stderr.on('data', (chunk: Buffer) => {
         stderr += chunk.toString();
