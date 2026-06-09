@@ -1,11 +1,17 @@
+# OpenPrep
+
 <p align="center">
-  <img src="public/logo/logo_full.svg" alt="Open Prep" width="360" />
+  <img src="public/logo/logo_full.svg" alt="OpenPrep" width="360" />
 </p>
 
-<h3 align="center">Private, local-first exam prep for serious English learners.</h3>
+<h3 align="center">Open-source TOEFL Writing practice powered by your existing ChatGPT subscription.</h3>
 
 <p align="center">
-  Practice TOEFL-style writing, submit essays from your Mac, and get structured rubric feedback without turning your study routine into a chatbot thread.
+  Practice TOEFL-style writing tasks, get structured AI feedback, and track your progress without paying for another full exam prep platform.
+</p>
+
+<p align="center">
+  OpenPrep is for learners who already have access to ChatGPT or Codex and mainly want to improve their Writing score. Instead of starting from an empty chat window, you get a focused desktop workflow: pick a prompt, write your response, submit it, review feedback, and improve over time.
 </p>
 
 <p align="center">
@@ -23,23 +29,28 @@
   <img alt="Local first" src="https://img.shields.io/badge/local--first-macOS-c6005c" />
 </p>
 
-![Open Prep prompt catalog](product_images/Prompts%20List.png)
+![OpenPrep writing prompt catalog](product_images/Prompts%20List.png)
 
-## Why Open Prep?
+## Why OpenPrep?
 
-Most AI study tools feel like a blank chat box with a grade tacked on at the end. Open Prep is different: it is a focused desktop app for deliberate exam practice.
+TOEFL prep tools can get expensive fast, and not every learner needs a full platform for every section. A lot of people are already comfortable with Reading, Listening, or Speaking, but want focused help with Writing.
 
-- **Practice from real flows, not loose chats.** Pick a writing prompt, read the task, write your answer, and submit it in one clean workspace.
-- **Get rubric-shaped feedback.** Scores, criterion explanations, improvement notes, and phrase-level feedback are rendered as structured study material.
-- **Keep your work local.** Attempts and evaluations are stored on your machine, with the app built around local execution and local persistence.
-- **Use locally callable AI.** The first provider path uses Codex through `codex exec`; the architecture is ready for more CLI-callable providers.
-- **Grow beyond the MVP.** Open Prep starts with TOEFL-style writing, but the domain model is designed for TOEFL, IELTS, Cambridge, and future reading, listening, speaking, and writing workflows.
+OpenPrep is built for that use case:
+
+- **Focus on Writing first.** Start with TOEFL-style writing prompts instead of paying for a full-course prep app you may not need.
+- **Use the AI you already pay for.** The current provider path uses Codex CLI, which lets OpenPrep work with an existing ChatGPT/Codex setup.
+- **Practice in a structured flow.** Choose a prompt, write your response, submit it, and review the result in one consistent workflow.
+- **Get feedback you can study.** Scores, criterion notes, improvement points, and phrase-level feedback are shown in a structured UI instead of a long chat transcript.
+- **See your progress.** Attempts are saved locally so you can review earlier work and track improvement over time.
+- **Keep room to grow.** Writing is the first focus, but broader exam sections can be added later if users ask for them.
+
+OpenPrep is more useful than opening ChatGPT alone because it gives you curated tasks, a repeatable workflow, structured output, saved attempts, and a place to compare progress over time.
 
 ## The Experience
 
 ### Choose a Prompt
 
-Open Prep starts with a catalog of writing tasks so practice begins with a concrete exam-style assignment.
+OpenPrep starts with a catalog of writing tasks so practice begins with a concrete exam-style assignment, not a blank chat.
 
 ![Prompt list](product_images/Prompts%20List.png)
 
@@ -51,7 +62,7 @@ The submission screen keeps the task and response area together, so you can stay
 
 ### Submit and Let the Evaluator Work
 
-Evaluation runs through the configured local provider path, then returns a structured result the UI can render consistently.
+Evaluation runs through the configured provider path, then returns a structured result the UI can render consistently.
 
 ![Evaluation loading state](product_images/Loading%20Screen.png)
 
@@ -65,17 +76,20 @@ Scores, strengths, improvement points, and detailed writing feedback are present
 
 ## Current Status
 
-Open Prep is in an early open-source preview. The current vertical slice focuses on macOS and TOEFL-style writing practice:
+OpenPrep is in an early open-source preview. The current vertical slice focuses on macOS and TOEFL-style writing practice:
 
 - prompt catalog
 - writing submission flow
 - Codex-backed writing evaluation
 - structured feedback UI
 - local persistence foundation
+- progress-oriented attempt storage
 - typed Electron IPC boundaries
 - mock provider for UI development
 
 Planned product direction includes history and review, broader exam support, speaking feedback, reading and listening modules, and provider selection.
+
+OpenPrep is a third-party practice tool, not an official ETS product.
 
 ## Download
 
@@ -120,7 +134,7 @@ If Electron fails to install correctly, use Node 22, remove `node_modules`, and 
 
 ## How It Works
 
-Open Prep keeps the desktop security boundary explicit:
+OpenPrep keeps the desktop security boundary explicit:
 
 - `renderer` handles React UI, routing, and view state.
 - `preload` exposes a narrow typed bridge.
@@ -128,6 +142,8 @@ Open Prep keeps the desktop security boundary explicit:
 - `shared/domain` contains contracts, schemas, and pure domain types.
 
 The AI provider layer is deliberately pluggable. Codex is the first implementation target, but provider-specific command building, parsing, and failure handling live behind a common interface so future local tools can be added without rebuilding the app around one vendor.
+
+This architecture matters, but it is supporting infrastructure rather than the headline. The main product idea is still simple: give TOEFL Writing learners a focused workflow that feels like practice, not a chatbot thread.
 
 ## Project Docs
 
@@ -138,7 +154,7 @@ The AI provider layer is deliberately pluggable. Codex is the first implementati
 
 ## Contributing
 
-Open Prep is a good project for people who care about calm learning software, local-first tools, Electron security, typed domain modeling, and AI feedback that is presented as a real product experience.
+OpenPrep is a good project for people who care about calm learning software, focused writing practice, typed domain modeling, and AI feedback that is presented as a real product experience.
 
 Before opening a PR:
 
@@ -152,4 +168,4 @@ Please keep changes aligned with the product and engineering docs. The short ver
 
 ## Trademark Notice
 
-TOEFL, IELTS, and Cambridge are trademarks of their respective owners. Open Prep is an independent open-source project and is not affiliated with or endorsed by those organizations.
+TOEFL, IELTS, and Cambridge are trademarks of their respective owners. OpenPrep is an independent open-source project and is not affiliated with or endorsed by those organizations.
