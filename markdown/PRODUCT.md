@@ -180,6 +180,24 @@ Feedback should be actionable and easy to scan.
 
 The product should avoid feeling like a generic chatbot shell.
 
+## Brand Color Direction
+
+The current app brand uses the logo-led purple and green palette already present in the app UI.
+
+Current core colors:
+
+- Primary purple: `#502b71`
+- Logo purple variants: `#5E2F7D`, `#6D3796`
+- Brand green: `#30C08B`
+- App background: `#f8f8f8`
+- White surface: `#ffffff`
+- Main text: `#131313`
+- Deep foreground: `#17121d`
+- Success: `#4db582`
+- Warning: `#f5a000`
+
+The deprecated video editor brief is not a current brand-color source.
+
 ## Persistence Direction
 
 Attempts and results should be stored locally from the beginning.

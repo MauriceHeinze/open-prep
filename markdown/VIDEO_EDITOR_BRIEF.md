@@ -1,4 +1,8 @@
-# Video Editor Brief
+# Deprecated Video Editor Brief
+
+This brief is deprecated and should not be used as the source of truth for current product, brand, or UI decisions.
+
+Use `PRODUCT.md` for product direction and `src/renderer/design-system/global.css` plus the logo assets in `public/logo/` for the current app color system.
 
 ## Project Summary
 
@@ -45,7 +49,9 @@ The broader product direction is a calm, private, academically credible prep pla
 5. Highlight structured feedback, scores, and annotated improvements
 6. End on the idea of focused practice and measurable progress
 
-## Exact Brand Colors
+## Deprecated Brand Colors
+
+These colors belonged to an older video direction and are no longer current.
 
 - Primary accent: `#c6005c`
 - App background: `#f8f8f8`
