@@ -6,7 +6,7 @@ It is intended to keep product decisions aligned while the codebase grows.
 
 ## Product Vision
 
-`open-prep` is a local macOS desktop application for exam preparation.
+`open-prep` is an open-source, local-first macOS desktop application for standardized English exam preparation.
 
 The long-term goal is to support complete test prep workflows across multiple exams and multiple skill areas, while running locally on the user's machine and integrating with locally callable AI tools for evaluation and guidance.
 
@@ -16,6 +16,14 @@ The product should feel focused, fast, private, and high quality.
 
 Help learners prepare for standardized English exams through structured practice, feedback, and progress tracking.
 
+The current public positioning is narrower and clearer:
+
+- Open-source TOEFL® Writing practice.
+- Powered by the user's existing ChatGPT/Codex setup.
+- Focused on learners who mainly want to improve their Writing score.
+- Designed to avoid paying for another full exam-prep platform when Writing is the main need.
+- More structured than opening a generic chatbot because practice starts from curated prompts and ends in saved, studyable feedback.
+
 The product should eventually support:
 
 - multiple exams
@@ -23,6 +31,30 @@ The product should eventually support:
 - AI-assisted evaluation where useful
 - local storage of attempts and results
 - future progress history and review workflows
+
+## Primary Advantage
+
+OpenPrep turns AI writing feedback into a repeatable study workflow instead of a loose chat thread.
+
+The advantage is the combination of:
+
+- curated TOEFL®-style writing prompts
+- a focused desktop writing workspace
+- structured rubric-based AI feedback
+- scores, criterion notes, strengths, improvement points, and phrase-level feedback
+- saved local attempts for later review
+- use of AI access the learner may already pay for
+
+This lets learners practice Writing in a product-shaped flow while keeping the app local-first and avoiding the cost or complexity of a full-course prep platform.
+
+## Initial Audience
+
+The first release is best for:
+
+- learners who already use ChatGPT, Codex, or compatible local AI tools
+- learners who are mostly comfortable with other exam sections but want focused Writing practice
+- early testers who want to try the first complete desktop vertical slice
+- contributors who care about calm learning software, typed domain modeling, and structured AI feedback
 
 ## Exams in Scope
 
@@ -69,6 +101,8 @@ Other compatible local or CLI-callable tools may be supported later.
 
 The product must not be coupled to one provider at the product-design level.
 
+The current provider path uses Codex CLI first, so live evaluation depends on a working local Codex setup. The product should also support a mock provider for UI development and testing without a live AI call.
+
 AI should be used where it adds clear user value, especially for:
 
 - writing feedback
@@ -100,8 +134,12 @@ Current MVP focus:
 - TOEFL®-style writing practice
 - prompt selection
 - essay submission
-- AI-based writing evaluation
+- Codex-backed writing evaluation
+- structured feedback UI
 - local persistence of results
+- progress-oriented attempt storage
+- typed Electron IPC boundaries
+- mock provider for local UI development
 - UI based on the provided Figma screens
 
 ## MVP Screens
@@ -142,6 +180,8 @@ The initial user flow should look like this:
 7. The user receives a structured evaluation with scores and detailed feedback.
 8. The result is stored locally for future use.
 
+The first-screen experience should feel like practice, not marketing and not a chatbot shell.
+
 ## Writing Evaluation Expectations
 
 The writing feedback should be structured and rubric-driven.
@@ -155,6 +195,22 @@ For the first writing flow, the AI evaluation should include:
 - highlighted phrase or word feedback where visible in the design
 
 The system should produce structured output that the UI can render reliably.
+
+## Current Release Status
+
+OpenPrep is in an early open-source preview.
+
+The current vertical slice includes:
+
+- prompt catalog
+- writing submission flow
+- Codex-backed writing evaluation
+- feedback overview screen
+- detailed phrase-level feedback screen
+- local persistence foundation
+- typed process boundaries between renderer, preload, main, and shared domain code
+
+OpenPrep is a third-party practice tool, not an official TOEFL®, IELTS, or Cambridge product.
 
 ## Product Principles
 
