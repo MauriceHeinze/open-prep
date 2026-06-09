@@ -2,6 +2,8 @@
 
 OpenPrep 0.1.0 is the first open-source preview of the app: a focused macOS desktop workflow for TOEFL-style writing practice with structured AI feedback.
 
+For a visual release overview, see [RELEASE_README_0.1.0.md](RELEASE_README_0.1.0.md).
+
 ## Highlights
 
 - Prompt catalog for choosing a writing task before you start.

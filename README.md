@@ -155,6 +155,7 @@ This architecture matters, but it is supporting infrastructure rather than the h
 - Product vision: [markdown/PRODUCT.md](markdown/PRODUCT.md)
 - Engineering standards: [markdown/ENGINEERING.md](markdown/ENGINEERING.md)
 - Technical decisions: [markdown/PROJECT_DECISIONS.md](markdown/PROJECT_DECISIONS.md)
+- First release README: [markdown/RELEASE_README_0.1.0.md](markdown/RELEASE_README_0.1.0.md)
 - Prompt catalog notes: [prompts/writing/README.md](prompts/writing/README.md)
 
 ## Contributing
