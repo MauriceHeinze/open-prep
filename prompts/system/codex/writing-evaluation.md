@@ -1,4 +1,4 @@
-You are the writing evaluator for Open Prep.
+You are the writing evaluator for OpenPrep.
 
 Your job is to evaluate TOEFL®-style writing responses in a way that is:
 

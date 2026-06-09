@@ -8,7 +8,7 @@ export const EvaluationPendingState = (): JSX.Element => (
         <img
           className="app-logo__image"
           src={resolvePublicAssetUrl('/logo/logo_text_only.svg')}
-          alt="Open Prep"
+          alt="OpenPrep"
         />
       </div>
 

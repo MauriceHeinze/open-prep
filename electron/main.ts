@@ -13,7 +13,7 @@ process.env.APP_ROOT = path.join(directoryName, '..');
 
 const { VITE_DEV_SERVER_URL } = process.env;
 const RENDERER_DIST = path.join(process.env.APP_ROOT, 'dist');
-const APP_NAME = 'Open Prep';
+const APP_NAME = 'OpenPrep';
 
 process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
   ? path.join(process.env.APP_ROOT, 'public')

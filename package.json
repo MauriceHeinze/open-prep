@@ -1,5 +1,7 @@
 {
   "name": "open-prep",
+  "author": "Maurice Heinze",
+  "description": "A desktop application for preparing for TOEFL® writing tasks.",
   "private": true,
   "version": "0.1.0",
   "main": "dist-electron/main.js",

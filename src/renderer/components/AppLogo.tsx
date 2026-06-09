@@ -4,6 +4,6 @@ export const AppLogo = (): JSX.Element => (
   <img
     className="app-logo__image"
     src={resolvePublicAssetUrl('/logo/logo_full.svg')}
-    alt="Open Prep"
+    alt="OpenPrep"
   />
 );

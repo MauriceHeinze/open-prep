@@ -1,13 +1,11 @@
-# OpenPrep
-
 <p align="center">
   <img src="public/logo/logo_full.svg" alt="OpenPrep" width="360" />
 </p>
 
-<h3 align="center">Open-source TOEFL Writing practice powered by your existing ChatGPT subscription.</h3>
+<h3 align="center">Open-source TOEFL® Writing practice powered by your existing ChatGPT subscription.</h3>
 
 <p align="center">
-  Practice TOEFL-style writing tasks, get structured AI feedback, and track your progress without paying for another full exam prep platform.
+  Practice TOEFL®-style writing tasks, get structured AI feedback, and track your progress without paying for another full exam prep platform.
 </p>
 
 <p align="center">
@@ -33,11 +31,11 @@
 
 ## Why OpenPrep?
 
-TOEFL prep tools can get expensive fast, and not every learner needs a full platform for every section. A lot of people are already comfortable with Reading, Listening, or Speaking, but want focused help with Writing.
+TOEFL® prep tools can get expensive fast, and not every learner needs a full platform for every section. A lot of people are already comfortable with Reading, Listening, or Speaking, but want focused help with Writing.
 
 OpenPrep is built for that use case:
 
-- **Focus on Writing first.** Start with TOEFL-style writing prompts instead of paying for a full-course prep app you may not need.
+- **Focus on Writing first.** Start with TOEFL®-style writing prompts instead of paying for a full-course prep app you may not need.
 - **Use the AI you already pay for.** The current provider path uses Codex CLI, which lets OpenPrep work with an existing ChatGPT/Codex setup.
 - **Practice in a structured flow.** Choose a prompt, write your response, submit it, and review the result in one consistent workflow.
 - **Get feedback you can study.** Scores, criterion notes, improvement points, and phrase-level feedback are shown in a structured UI instead of a long chat transcript.
@@ -76,7 +74,7 @@ Scores, strengths, improvement points, and detailed writing feedback are present
 
 ## Current Status
 
-OpenPrep is in an early open-source preview. The current vertical slice focuses on macOS and TOEFL-style writing practice:
+OpenPrep is in an early open-source preview. The current vertical slice focuses on macOS and TOEFL®-style writing practice:
 
 - prompt catalog
 - writing submission flow
@@ -143,7 +141,7 @@ OpenPrep keeps the desktop security boundary explicit:
 
 The AI provider layer is deliberately pluggable. Codex is the first implementation target, but provider-specific command building, parsing, and failure handling live behind a common interface so future local tools can be added without rebuilding the app around one vendor.
 
-This architecture matters, but it is supporting infrastructure rather than the headline. The main product idea is still simple: give TOEFL Writing learners a focused workflow that feels like practice, not a chatbot thread.
+This architecture matters, but it is supporting infrastructure rather than the headline. The main product idea is still simple: give TOEFL® Writing learners a focused workflow that feels like practice, not a chatbot thread.
 
 ## Project Docs
 
@@ -168,4 +166,4 @@ Please keep changes aligned with the product and engineering docs. The short ver
 
 ## Trademark Notice
 
-TOEFL, IELTS, and Cambridge are trademarks of their respective owners. OpenPrep is an independent open-source project and is not affiliated with or endorsed by those organizations.
+TOEFL®, IELTS, and Cambridge are trademarks of their respective owners. OpenPrep is an independent open-source project and is not affiliated with or endorsed by those organizations.

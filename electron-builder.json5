@@ -3,13 +3,13 @@
   $schema: 'https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json',
   appId: 'com.openprep.app',
   asar: true,
-  productName: 'Open Prep',
+  productName: 'OpenPrep',
   directories: {
     output: 'release/${version}',
   },
   files: ['dist', 'dist-electron', 'prompts'],
   mac: {
-    icon: 'public/logo/logo_icon_only.svg',
+    icon: 'build/icon.icns',
     target: ['dmg'],
     artifactName: '${productName}-Mac-${version}-Installer.${ext}',
   },

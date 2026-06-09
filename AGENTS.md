@@ -1,4 +1,4 @@
 - refer to markdown folder for information about product, project decisions or engineering guidelines.
+- always update the markdown files if necesarry
 - always commit and push after each turn. Use conventioanl commit messages.
 - don't stack cards inside of cards
-- always add, commit and push dist-electron files
