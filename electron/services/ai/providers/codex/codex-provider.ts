@@ -22,7 +22,37 @@ import { loadCodexSystemPrompt } from './codex-system-prompt';
 const CODEX_MODEL = 'gpt-5.4-mini';
 const CODEX_REASONING_EFFORT = 'low';
 
-const normalizeEvaluationPayload = (payload: unknown): unknown => {
+const isValidOffset = (value: unknown): value is number =>
+  typeof value === 'number' && Number.isFinite(value) && value >= 0;
+
+const resolveHighlightOffsets = (
+  essayText: string,
+  highlight: Record<string, unknown>,
+): Pick<Record<string, number>, 'startOffset' | 'endOffset'> | null => {
+  if (isValidOffset(highlight.startOffset) && isValidOffset(highlight.endOffset)) {
+    return {
+      startOffset: highlight.startOffset,
+      endOffset: Math.max(highlight.startOffset, highlight.endOffset),
+    };
+  }
+
+  if (typeof highlight.excerpt !== 'string' || highlight.excerpt.trim().length === 0) {
+    return null;
+  }
+
+  const startOffset = essayText.indexOf(highlight.excerpt);
+
+  if (startOffset < 0) {
+    return null;
+  }
+
+  return {
+    startOffset,
+    endOffset: startOffset + highlight.excerpt.length,
+  };
+};
+
+export const normalizeEvaluationPayload = (payload: unknown, essayText: string): unknown => {
   if (!payload || typeof payload !== 'object') {
     return payload;
   }
@@ -38,19 +68,25 @@ const normalizeEvaluationPayload = (payload: unknown): unknown => {
 
   return {
     ...evaluation,
-    highlights: highlights.map((highlight) => {
+    highlights: highlights.flatMap((highlight) => {
       if (!highlight || typeof highlight !== 'object') {
-        return highlight;
+        return [];
       }
 
       const highlightRecord = highlight as Record<string, unknown>;
+      const offsets = resolveHighlightOffsets(essayText, highlightRecord);
 
-      return {
+      if (!offsets) {
+        return [];
+      }
+
+      return [{
         ...highlightRecord,
         alternatives: Array.isArray(highlightRecord.alternatives)
           ? highlightRecord.alternatives
           : [],
-      };
+        ...offsets,
+      }];
     }),
   };
 };
@@ -130,7 +166,7 @@ export class CodexProvider implements AiProvider {
     const raw = await fs.readFile(outputFilePath, 'utf8');
     await fs.rm(outputFilePath, { force: true });
 
-    const parsed = normalizeEvaluationPayload(JSON.parse(raw) as unknown);
+    const parsed = normalizeEvaluationPayload(JSON.parse(raw) as unknown, request.essayText);
 
     return v.parse(writingEvaluationSchema, parsed);
   }

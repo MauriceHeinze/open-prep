@@ -18,6 +18,7 @@ const buildRubricDefinition = (): string =>
     '  ]',
     '}',
     'If no useful highlight exists, return an empty highlights array.',
+    'Every highlight must include startOffset and endOffset from the student essay. Omit highlights when exact offsets are unclear.',
   ].join('\n');
 
 const stripHtml = (value: string): string =>
