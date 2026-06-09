@@ -20,6 +20,9 @@ export const EvaluationPendingState = (): JSX.Element => (
         Analyzing
         <span aria-hidden="true" />
       </p>
+      <p className="m-0 max-w-72 text-sm font-medium leading-6 text-muted-foreground">
+        During peak traffic hours, feedback generation might take up to 3 minutes.
+      </p>
     </div>
   </section>
 );
