@@ -87,7 +87,7 @@ OpenPrep is in an early open-source preview. The current vertical slice focuses 
 
 Planned product direction includes history and review, broader exam support, speaking feedback, reading and listening modules, and provider selection.
 
-OpenPrep is a third-party practice tool, not an official ETS product.
+OpenPrep is a third-party practice tool, not an official product.
 
 ## Download
 
