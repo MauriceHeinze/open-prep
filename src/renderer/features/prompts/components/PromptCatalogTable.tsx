@@ -79,7 +79,7 @@ const SortableHeading = ({
 
 const PromptScore = ({ score }: { score: number | null }): JSX.Element => (
   <Badge
-    className="min-w-24 justify-center rounded-full px-3 py-1 text-sm"
+    className="min-w-24 justify-center rounded-full px-3 py-1"
     variant={score === null ? 'secondary' : 'default'}
     aria-label={score === null ? 'No score yet' : `Score ${formatScore(score)}`}
   >
