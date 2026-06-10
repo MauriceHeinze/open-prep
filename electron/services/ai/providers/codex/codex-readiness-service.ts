@@ -1,6 +1,5 @@
-import { Codex } from '@openai/codex-sdk';
-
 import { resolveCodexTimeoutMs } from './codex-provider';
+import { createCodexClient } from './codex-sdk';
 
 const CODEX_MODEL = 'gpt-5.4-mini';
 const CODEX_REASONING_EFFORT = 'low';
@@ -24,7 +23,7 @@ export class CodexReadinessService {
       return this.getStatus();
     }
 
-    const codex = new Codex();
+    const codex = await createCodexClient();
     const thread = codex.startThread({
       model: CODEX_MODEL,
       modelReasoningEffort: CODEX_REASONING_EFFORT,

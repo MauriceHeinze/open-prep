@@ -1,4 +1,3 @@
-import { Codex } from '@openai/codex-sdk';
 import * as v from 'valibot';
 
 import type { AiProvider, WritingEvaluationRequest } from '../../core/ai-provider';
@@ -7,6 +6,7 @@ import { writingEvaluationSchema } from '../../../../../src/shared/schemas/evalu
 
 import { buildCodexPrompt } from './codex-command-builder';
 import { writingEvaluationOutputSchema } from './codex-output-schema';
+import { createCodexClient } from './codex-sdk';
 import { loadCodexSystemPrompt } from './codex-system-prompt';
 
 const CODEX_MODEL = 'gpt-5.4-mini';
@@ -98,7 +98,7 @@ export class CodexProvider implements AiProvider {
   public async evaluateWriting(request: WritingEvaluationRequest): Promise<WritingEvaluation> {
     const systemPrompt = await loadCodexSystemPrompt();
     const prompt = buildCodexPrompt(request, systemPrompt);
-    const codex = new Codex();
+    const codex = await createCodexClient();
     const thread = codex.startThread({
       model: CODEX_MODEL,
       modelReasoningEffort: CODEX_REASONING_EFFORT,
