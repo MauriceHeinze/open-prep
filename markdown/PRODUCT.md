@@ -97,11 +97,11 @@ Examples include:
 - Codex
 - Claude Code
 
-Other compatible local or CLI-callable tools may be supported later.
+Other compatible local or SDK-callable tools may be supported later.
 
 The product must not be coupled to one provider at the product-design level.
 
-The current provider path uses Codex CLI first, so live evaluation depends on a working local Codex setup. The product should also support a mock provider for UI development and testing without a live AI call.
+The current provider path uses the official Codex SDK first, so live evaluation depends on a successful ChatGPT/Codex sign-in. The product should also support a mock provider for UI development and testing without a live AI call.
 
 AI should be used where it adds clear user value, especially for:
 

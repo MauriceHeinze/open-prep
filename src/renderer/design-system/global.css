@@ -116,6 +116,32 @@ button {
   place-items: center;
 }
 
+.app-page--signin {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  padding: 48px;
+  place-items: center;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(80, 43, 113, 0.12), transparent 32%),
+    radial-gradient(circle at 82% 12%, rgba(77, 181, 130, 0.14), transparent 28%),
+    linear-gradient(135deg, #fbfaf7 0%, #f6f1fb 48%, #f8f8f8 100%);
+}
+
+.signin-panel {
+  display: grid;
+  width: min(740px, 100%);
+  gap: 32px;
+}
+
+.signin-panel__brand {
+  width: 184px;
+}
+
+.signin-panel__surface {
+  overflow: hidden;
+}
+
 .app-logo {
   display: inline-flex;
   align-items: center;

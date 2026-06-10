@@ -10,7 +10,7 @@ Use `PRODUCT.md` for product direction and `src/renderer/design-system/global.cs
 
 The first release focuses on TOEFL®-style writing practice. A learner picks a prompt, writes an essay, submits it, and receives AI-assisted rubric feedback with scores, explanations, and targeted improvement notes.
 
-The app is designed for people who already have a local AI CLI installed. It works with either ChatGPT Plus users who have Codex installed locally or users who have Claude Code installed locally.
+The app is designed for people who already have ChatGPT/Codex access and want a structured writing workflow. OpenPrep uses the official Codex SDK for AI evaluation instead of requiring a separate Codex CLI install.
 
 The broader product direction is a calm, private, academically credible prep platform for TOEFL®, IELTS, and Cambridge across writing, speaking, reading, and listening.
 
@@ -19,7 +19,7 @@ The broader product direction is a calm, private, academically credible prep pla
 - This is an open source project
 - This is a serious study tool, not a generic chatbot
 - The app is focused, private, and local-first
-- The AI workflow depends on a locally installed Codex or Claude Code CLI
+- The AI workflow starts with ChatGPT sign-in for Codex-backed evaluation
 - The workflow is simple: choose prompt, write, submit, review feedback
 - The value is structured evaluation, clarity, and progress
 

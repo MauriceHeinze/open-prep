@@ -1,9 +1,4 @@
-import { spawn } from 'node:child_process';
-import { randomUUID } from 'node:crypto';
-import { promises as fs } from 'node:fs';
-import os from 'node:os';
-import path from 'node:path';
-
+import { Codex } from '@openai/codex-sdk';
 import * as v from 'valibot';
 
 import type { AiProvider, WritingEvaluationRequest } from '../../core/ai-provider';
@@ -11,16 +6,22 @@ import type { WritingEvaluation } from '../../../../../src/shared/domain/evaluat
 import { writingEvaluationSchema } from '../../../../../src/shared/schemas/evaluation-schemas';
 
 import { buildCodexPrompt } from './codex-command-builder';
-import {
-  buildCodexEnvironment,
-  buildCodexNotFoundMessage,
-  resolveCodexCommand,
-  resolveCodexTimeoutMs,
-} from './codex-cli-environment';
+import { writingEvaluationOutputSchema } from './codex-output-schema';
 import { loadCodexSystemPrompt } from './codex-system-prompt';
 
 const CODEX_MODEL = 'gpt-5.4-mini';
 const CODEX_REASONING_EFFORT = 'low';
+const DEFAULT_CODEX_TIMEOUT_MS = 300_000;
+
+export const resolveCodexTimeoutMs = (
+  environment: Record<string, string | undefined> = process.env,
+): number => {
+  const configuredTimeoutMs = Number(environment.OPEN_PREP_CODEX_TIMEOUT_MS);
+
+  return Number.isFinite(configuredTimeoutMs) && configuredTimeoutMs > 0
+    ? configuredTimeoutMs
+    : DEFAULT_CODEX_TIMEOUT_MS;
+};
 
 const isValidOffset = (value: unknown): value is number =>
   typeof value === 'number' && Number.isFinite(value) && value >= 0;
@@ -95,79 +96,37 @@ export class CodexProvider implements AiProvider {
   public readonly id = 'codex' as const;
 
   public async evaluateWriting(request: WritingEvaluationRequest): Promise<WritingEvaluation> {
-    const outputFilePath = path.join(os.tmpdir(), `open-prep-codex-${randomUUID()}.json`);
     const systemPrompt = await loadCodexSystemPrompt();
     const prompt = buildCodexPrompt(request, systemPrompt);
-
-    const args = [
-      'exec',
-      '--skip-git-repo-check',
-      '--output-last-message',
-      outputFilePath,
-      '--model',
-      CODEX_MODEL,
-      '--config',
-      `model_reasoning_effort="${CODEX_REASONING_EFFORT}"`,
-      '-',
-    ];
-
-    await new Promise<void>((resolve, reject) => {
-      const codexEnvironment: NodeJS.ProcessEnv = {
-        ...buildCodexEnvironment(),
-        APP_ROOT: process.env.APP_ROOT,
-        VITE_PUBLIC: process.env.VITE_PUBLIC,
-      };
-      const child = spawn(resolveCodexCommand(), args, {
-        env: codexEnvironment,
-        stdio: ['pipe', 'pipe', 'pipe'],
-      });
-
-      let stderr = '';
-      const timeoutMs = resolveCodexTimeoutMs(codexEnvironment);
-      const timeout = setTimeout(() => {
-        child.kill('SIGTERM');
-        const diagnostic = stderr.trim();
-
-        reject(
-          new Error(
-            diagnostic.length > 0
-              ? `Codex evaluation timed out after ${String(timeoutMs)}ms. ${diagnostic}`
-              : `Codex evaluation timed out after ${String(timeoutMs)}ms.`,
-          ),
-        );
-      }, timeoutMs);
-
-      child.stderr.on('data', (chunk: Buffer) => {
-        stderr += chunk.toString();
-      });
-
-      child.on('error', (error: NodeJS.ErrnoException) => {
-        clearTimeout(timeout);
-        reject(
-          error.code === 'ENOENT' ? new Error(buildCodexNotFoundMessage(codexEnvironment)) : error,
-        );
-      });
-
-      child.on('close', (code) => {
-        clearTimeout(timeout);
-
-        if (code !== 0) {
-          reject(new Error(stderr || `Codex exited with code ${String(code)}.`));
-          return;
-        }
-
-        resolve();
-      });
-
-      child.stdin.write(prompt);
-      child.stdin.end();
+    const codex = new Codex();
+    const thread = codex.startThread({
+      model: CODEX_MODEL,
+      modelReasoningEffort: CODEX_REASONING_EFFORT,
+      skipGitRepoCheck: true,
     });
+    const timeoutMs = resolveCodexTimeoutMs();
+    const abortController = new AbortController();
+    const timeout = setTimeout(() => abortController.abort(), timeoutMs);
 
-    const raw = await fs.readFile(outputFilePath, 'utf8');
-    await fs.rm(outputFilePath, { force: true });
+    try {
+      const result = await thread.run(prompt, {
+        outputSchema: writingEvaluationOutputSchema,
+        signal: abortController.signal,
+      });
+      const parsed = normalizeEvaluationPayload(
+        JSON.parse(result.finalResponse) as unknown,
+        request.essayText,
+      );
 
-    const parsed = normalizeEvaluationPayload(JSON.parse(raw) as unknown, request.essayText);
+      return v.parse(writingEvaluationSchema, parsed);
+    } catch (error) {
+      if (abortController.signal.aborted) {
+        throw new Error(`Codex evaluation timed out after ${String(timeoutMs)}ms.`);
+      }
 
-    return v.parse(writingEvaluationSchema, parsed);
+      throw error;
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 }

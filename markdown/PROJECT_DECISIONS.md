@@ -97,7 +97,7 @@ Decision:
 
 Initial provider target:
 
-- `Codex`
+- `Codex` through the official Codex SDK
 
 Planned future-compatible provider examples:
 
@@ -106,7 +106,7 @@ Planned future-compatible provider examples:
 Why:
 
 - provider flexibility is a product requirement
-- local CLI tools differ in command format, output, and capabilities
+- provider tools differ in SDK surface, command format, output, and capabilities
 - the app should be able to switch or expand providers without redesigning the core
 
 Tradeoffs:
@@ -118,8 +118,8 @@ Tradeoffs:
 
 Decision:
 
-- Run AI commands from the Electron `main` process only.
-- Use background terminal command execution for provider calls.
+- Run AI provider calls from the Electron `main` process only.
+- Use the official provider SDK where available before introducing app-owned command execution.
 
 Why:
 
@@ -136,7 +136,7 @@ Tradeoffs:
 
 Decision:
 
-- The initial writing-evaluation provider flow should target Codex with `gpt-5.4-mini`.
+- The initial writing-evaluation provider flow should target Codex through `@openai/codex-sdk` with `gpt-5.4-mini`.
 - Reasoning should be configured toward a low reasoning mode when supported by the provider interface or command surface.
 
 Why:
@@ -146,12 +146,12 @@ Why:
 
 Tradeoffs:
 
-- provider command flags may evolve over time
+- provider SDK and runtime options may evolve over time
 - reasoning controls must be isolated from the app core because they are provider-specific
 
 Note:
 
-- The exact provider command shape should be finalized during implementation against the locally installed provider CLI behavior.
+- Users do not need to install Codex CLI separately for OpenPrep.
 - Codex-backed writing evaluation uses a five-minute default timeout and can be overridden with `OPEN_PREP_CODEX_TIMEOUT_MS` for slower local setups.
 
 ## App Architecture

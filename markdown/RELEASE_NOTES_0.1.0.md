@@ -17,7 +17,7 @@ For a visual release overview, see [RELEASE_README_0.1.0.md](RELEASE_README_0.1.
 
 - This is an early preview release, so the scope is intentionally narrow.
 - The current build focuses on TOEFL-style Writing and does not yet cover the other exam sections.
-- AI evaluation depends on the configured local provider path and a working Codex CLI setup.
+- AI evaluation uses the official Codex SDK and depends on ChatGPT/Codex sign-in.
 
 ## Recommended For
 

@@ -62,7 +62,7 @@ This is an early preview release.
 
 - The current build focuses on Writing only.
 - TOEFL®-style prompts are the first supported prompt type.
-- AI evaluation depends on a working local Codex CLI setup.
+- AI evaluation uses the official Codex SDK and depends on ChatGPT/Codex sign-in.
 - macOS may warn about opening an unsigned preview app downloaded from the internet.
 - History, broader analytics, and non-writing exam sections are planned but not part of this first release.
 
@@ -72,7 +72,7 @@ Recommended runtime:
 
 - Node.js `22`
 - macOS
-- Codex CLI installed and authenticated for live AI evaluation
+- ChatGPT sign-in for live AI evaluation
 
 ```bash
 npm install

@@ -36,7 +36,7 @@ TOEFL® prep tools can get expensive fast, and not every learner needs a full pl
 OpenPrep is built for that use case:
 
 - **Focus on Writing first.** Start with TOEFL®-style writing prompts instead of paying for a full-course prep app you may not need.
-- **Use the AI you already pay for.** The current provider path uses Codex CLI, which lets OpenPrep work with an existing ChatGPT/Codex setup.
+- **Use the AI you already pay for.** OpenPrep uses the official Codex SDK so learners can sign in with ChatGPT for AI evaluation without installing a separate Codex CLI.
 - **Practice in a structured flow.** Choose a prompt, write your response, submit it, and review the result in one consistent workflow.
 - **Get feedback you can study.** Scores, criterion notes, improvement points, and phrase-level feedback are shown in a structured UI instead of a long chat transcript.
 - **See your progress.** Attempts are saved locally so you can review earlier work and track improvement over time.
@@ -48,7 +48,7 @@ OpenPrep is more useful than opening ChatGPT alone because it gives you curated 
 
 ### Choose a Prompt
 
-OpenPrep starts with a catalog of writing tasks so practice begins with a concrete exam-style assignment, not a blank chat.
+OpenPrep starts with a ChatGPT sign-in screen for AI evaluation, then opens a catalog of writing tasks so practice begins with a concrete exam-style assignment, not a blank chat.
 
 ![Prompt list](product_images/Prompts%20List.png)
 
@@ -101,7 +101,7 @@ Recommended runtime:
 
 - Node.js `22`
 - macOS
-- Codex CLI installed and authenticated if you want live AI evaluation
+- ChatGPT sign-in if you want live AI evaluation
 
 ```bash
 npm install
@@ -114,8 +114,7 @@ For local UI work without a live AI call:
 OPEN_PREP_AI_PROVIDER=mock npm run dev
 ```
 
-Codex-backed evaluation uses a five-minute timeout by default. If your local Codex setup
-regularly needs more time, override it in milliseconds:
+Codex-backed evaluation uses the official Codex SDK and a five-minute timeout by default. If your local setup regularly needs more time, override it in milliseconds:
 
 ```bash
 OPEN_PREP_CODEX_TIMEOUT_MS=600000 npm run dev
@@ -146,7 +145,7 @@ OpenPrep keeps the desktop security boundary explicit:
 - `main` owns persistence, provider calls, and privileged work.
 - `shared/domain` contains contracts, schemas, and pure domain types.
 
-The AI provider layer is deliberately pluggable. Codex is the first implementation target, but provider-specific command building, parsing, and failure handling live behind a common interface so future local tools can be added without rebuilding the app around one vendor.
+The AI provider layer is deliberately pluggable. Codex via the official SDK is the first implementation target, but provider-specific prompt, parsing, and failure handling live behind a common interface so future tools can be added without rebuilding the app around one vendor.
 
 This architecture matters, but it is supporting infrastructure rather than the headline. The main product idea is still simple: give TOEFL® Writing learners a focused workflow that feels like practice, not a chatbot thread.
 

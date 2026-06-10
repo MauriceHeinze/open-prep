@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import path from 'node:path';
 
 import { registerAppIpc } from './ipc/register-app-ipc';
+import { CodexReadinessService } from './services/ai/providers/codex/codex-readiness-service';
 import { PromptCatalogService } from './services/catalog/prompt-catalog-service';
 import { AttemptRepository } from './services/persistence/attempt-repository';
 import { createDatabase } from './services/persistence/database';
@@ -53,6 +54,7 @@ app.whenReady().then(() => {
 
   const database = createDatabase(app);
   const attemptRepository = new AttemptRepository(database);
+  const codexReadinessService = new CodexReadinessService();
   const promptCatalogService = new PromptCatalogService(attemptRepository);
   const writingEvaluationService = new WritingEvaluationService(
     promptCatalogService,
@@ -60,6 +62,7 @@ app.whenReady().then(() => {
   );
 
   registerAppIpc({
+    codexReadinessService,
     promptCatalogService,
     attemptRepository,
     writingEvaluationService,

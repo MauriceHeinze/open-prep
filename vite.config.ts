@@ -21,7 +21,7 @@ export default defineConfig({
         vite: {
           build: {
             rollupOptions: {
-              external: ['better-sqlite3'],
+              external: ['@openai/codex-sdk', 'better-sqlite3'],
             },
           },
         },
