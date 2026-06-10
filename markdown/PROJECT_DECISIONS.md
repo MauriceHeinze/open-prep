@@ -153,6 +153,7 @@ Note:
 
 - Users do not need to install Codex CLI separately for OpenPrep.
 - Codex-backed writing evaluation uses a five-minute default timeout and can be overridden with `OPEN_PREP_CODEX_TIMEOUT_MS` for slower local setups.
+- Packaged Electron builds must launch the bundled Codex binary from `app.asar.unpacked`. The Codex SDK wraps the npm-provided Codex CLI, and native executables cannot be spawned from Electron's virtual `app.asar` path.
 
 ## App Architecture
 
