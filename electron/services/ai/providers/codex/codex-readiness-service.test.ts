@@ -2,25 +2,57 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { CodexReadinessService } from './codex-readiness-service';
 
-const codexMocks = vi.hoisted(() => ({
-  Codex: vi.fn(),
-  run: vi.fn(),
-  startThread: vi.fn(),
+const childProcessMocks = vi.hoisted(() => ({
+  execFile: vi.fn(),
 }));
 
-vi.mock('@openai/codex-sdk', () => ({
-  Codex: codexMocks.Codex,
+vi.mock('node:child_process', () => ({
+  default: {
+    execFile: childProcessMocks.execFile,
+  },
+  execFile: childProcessMocks.execFile,
 }));
+
+vi.mock('./codex-sdk', () => ({
+  resolveCodexCliProcessConfig: () => ({
+    command: '/mock/codex',
+    argsPrefix: [],
+    env: { PATH: '/mock/bin' },
+  }),
+}));
+
+type ExecFileCallback = (error: Error | null, stdout: string, stderr: string) => void;
+
+const mockSuccessfulCodexCommand = (): void => {
+  childProcessMocks.execFile.mockImplementation(
+    (
+      _command: string,
+      _args: string[],
+      _options: unknown,
+      callback: ExecFileCallback,
+    ) => {
+      callback(null, 'Logged in using ChatGPT', '');
+    },
+  );
+};
+
+const mockFailedCodexCommand = (message: string): void => {
+  childProcessMocks.execFile.mockImplementationOnce(
+    (
+      _command: string,
+      _args: string[],
+      _options: unknown,
+      callback: ExecFileCallback,
+    ) => {
+      callback(new Error(message), '', message);
+    },
+  );
+};
 
 describe('CodexReadinessService', () => {
   beforeEach(() => {
     vi.unstubAllEnvs();
-    codexMocks.Codex.mockImplementation(() => ({
-      startThread: codexMocks.startThread,
-    }));
-    codexMocks.startThread.mockReturnValue({
-      run: codexMocks.run,
-    });
+    mockSuccessfulCodexCommand();
   });
 
   afterEach(() => {
@@ -29,10 +61,20 @@ describe('CodexReadinessService', () => {
     vi.unstubAllEnvs();
   });
 
-  it('starts unauthenticated by default', () => {
+  it('starts unauthenticated when the bundled Codex CLI is not logged in', async () => {
+    mockFailedCodexCommand('Not logged in');
+
     const service = new CodexReadinessService();
 
-    expect(service.getStatus()).toEqual({ isAuthenticated: false });
+    await expect(service.getStatus()).resolves.toEqual({ isAuthenticated: false });
+    expect(childProcessMocks.execFile).toHaveBeenCalledWith(
+      '/mock/codex',
+      ['login', 'status'],
+      expect.objectContaining({
+        env: { PATH: '/mock/bin' },
+      }),
+      expect.any(Function),
+    );
   });
 
   it('treats the mock provider as ready', async () => {
@@ -41,39 +83,49 @@ describe('CodexReadinessService', () => {
     const service = new CodexReadinessService();
 
     await expect(service.signIn()).resolves.toEqual({ isAuthenticated: true });
-    expect(codexMocks.Codex).not.toHaveBeenCalled();
+    expect(childProcessMocks.execFile).not.toHaveBeenCalled();
   });
 
-  it('marks Codex authenticated after a successful SDK readiness run', async () => {
-    codexMocks.run.mockResolvedValue({ finalResponse: '{"ok":true}' });
-
+  it('marks Codex authenticated after a successful CLI login', async () => {
     const service = new CodexReadinessService();
     const status = await service.signIn();
 
     expect(status).toEqual({ isAuthenticated: true });
-    expect(service.getStatus()).toEqual({ isAuthenticated: true });
-    expect(codexMocks.startThread).toHaveBeenCalledWith({
-      model: 'gpt-5.4-mini',
-      modelReasoningEffort: 'low',
-      skipGitRepoCheck: true,
-    });
+    await expect(service.getStatus()).resolves.toEqual({ isAuthenticated: true });
+    expect(childProcessMocks.execFile).toHaveBeenNthCalledWith(
+      1,
+      '/mock/codex',
+      ['login'],
+      expect.objectContaining({
+        env: { PATH: '/mock/bin' },
+      }),
+      expect.any(Function),
+    );
   });
 
-  it('keeps Codex unauthenticated when the SDK readiness run fails', async () => {
-    codexMocks.run.mockRejectedValue(new Error('not signed in'));
+  it('keeps Codex unauthenticated when CLI login fails', async () => {
+    mockFailedCodexCommand('not signed in');
 
     const service = new CodexReadinessService();
 
     await expect(service.signIn()).rejects.toThrow('not signed in');
-    expect(service.getStatus()).toEqual({ isAuthenticated: false });
+    mockFailedCodexCommand('Not logged in');
+    await expect(service.getStatus()).resolves.toEqual({ isAuthenticated: false });
   });
 
-  it('aborts the readiness run when the Codex timeout elapses', async () => {
+  it('aborts CLI login when the Codex timeout elapses', async () => {
     vi.stubEnv('OPEN_PREP_CODEX_TIMEOUT_MS', '1');
-    codexMocks.run.mockImplementation((_prompt: string, options: { signal: AbortSignal }) =>
-      new Promise((_resolve, reject) => {
-        options.signal.addEventListener('abort', () => reject(new Error('aborted')));
-      }),
+    childProcessMocks.execFile.mockImplementation(
+      (
+        _command: string,
+        _args: string[],
+        options: { signal: AbortSignal },
+        callback: ExecFileCallback,
+      ) => {
+        options.signal.addEventListener('abort', () => {
+          callback(new Error('aborted'), '', 'aborted');
+        });
+      },
     );
 
     const service = new CodexReadinessService();

@@ -1,17 +1,71 @@
-import { resolveCodexTimeoutMs } from './codex-provider';
-import { createCodexClient } from './codex-sdk';
+import { execFile, type ExecFileException } from 'node:child_process';
 
-const CODEX_MODEL = 'gpt-5.4-mini';
-const CODEX_REASONING_EFFORT = 'low';
+import { resolveCodexTimeoutMs } from './codex-provider';
+import { resolveCodexCliProcessConfig } from './codex-sdk';
+
+const CODEX_LOGIN_STATUS_TIMEOUT_MS = 10_000;
 
 export type CodexAuthStatus = {
   isAuthenticated: boolean;
 };
 
+const runCodexCli = async (args: string[], timeoutMs: number): Promise<string> => {
+  const { command, argsPrefix, env } = resolveCodexCliProcessConfig();
+  const abortController = new AbortController();
+  let didTimeOut = false;
+  const timeout = setTimeout(() => {
+    didTimeOut = true;
+    abortController.abort();
+  }, timeoutMs);
+
+  try {
+    return await new Promise<string>((resolve, reject) => {
+      execFile(
+        command,
+        [...argsPrefix, ...args],
+        {
+          env: env as NodeJS.ProcessEnv,
+          signal: abortController.signal,
+          timeout: timeoutMs,
+        },
+        (error: ExecFileException | null, stdout: string | Buffer, stderr: string | Buffer) => {
+          if (didTimeOut) {
+            reject(new Error(`Codex command timed out after ${String(timeoutMs)}ms.`));
+            return;
+          }
+
+          if (error) {
+            reject(error);
+            return;
+          }
+
+          resolve(`${String(stdout)}${String(stderr)}`);
+        },
+      );
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
+};
+
 export class CodexReadinessService {
   private isAuthenticated = process.env.OPEN_PREP_AI_PROVIDER === 'mock';
 
-  public getStatus(): CodexAuthStatus {
+  public async getStatus(): Promise<CodexAuthStatus> {
+    if (process.env.OPEN_PREP_AI_PROVIDER === 'mock') {
+      this.isAuthenticated = true;
+      return {
+        isAuthenticated: this.isAuthenticated,
+      };
+    }
+
+    try {
+      await runCodexCli(['login', 'status'], CODEX_LOGIN_STATUS_TIMEOUT_MS);
+      this.isAuthenticated = true;
+    } catch {
+      this.isAuthenticated = false;
+    }
+
     return {
       isAuthenticated: this.isAuthenticated,
     };
@@ -23,41 +77,21 @@ export class CodexReadinessService {
       return this.getStatus();
     }
 
-    const codex = await createCodexClient();
-    const thread = codex.startThread({
-      model: CODEX_MODEL,
-      modelReasoningEffort: CODEX_REASONING_EFFORT,
-      skipGitRepoCheck: true,
-    });
     const timeoutMs = resolveCodexTimeoutMs();
-    const abortController = new AbortController();
-    const timeout = setTimeout(() => abortController.abort(), timeoutMs);
 
     try {
-      await thread.run('Return JSON with ok set to true.', {
-        outputSchema: {
-          type: 'object',
-          additionalProperties: false,
-          properties: {
-            ok: { type: 'boolean' },
-          },
-          required: ['ok'],
-        },
-        signal: abortController.signal,
-      });
+      await runCodexCli(['login'], timeoutMs);
       this.isAuthenticated = true;
 
-      return this.getStatus();
+      return await this.getStatus();
     } catch (error) {
       this.isAuthenticated = false;
 
-      if (abortController.signal.aborted) {
+      if (error instanceof Error && error.message.includes('timed out')) {
         throw new Error(`ChatGPT sign-in check timed out after ${String(timeoutMs)}ms.`);
       }
 
       throw error;
-    } finally {
-      clearTimeout(timeout);
     }
   }
 }

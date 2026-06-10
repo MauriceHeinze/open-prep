@@ -32,11 +32,33 @@ const CODEX_PLATFORM_PACKAGES = {
 } as const;
 
 type CodexPlatformKey = keyof typeof CODEX_PLATFORM_PACKAGES;
+type CodexEnvironment = Record<string, string>;
+
+export type CodexCliProcessConfig = {
+  command: string;
+  argsPrefix: string[];
+  env: CodexEnvironment;
+};
 
 const moduleRequire = createRequire(import.meta.url);
 
 export const resolveAsarUnpackedPath = (filePath: string): string =>
   filePath.replace(`${path.sep}app.asar${path.sep}`, `${path.sep}app.asar.unpacked${path.sep}`);
+
+const createCodexEnvironment = (pathDirectory?: string): CodexEnvironment => {
+  const env: CodexEnvironment = Object.fromEntries(
+    Object.entries(process.env).filter((entry): entry is [string, string] => entry[1] !== undefined),
+  );
+
+  if (pathDirectory) {
+    env.PATH = [
+      pathDirectory,
+      process.env.PATH,
+    ].filter(Boolean).join(path.delimiter);
+  }
+
+  return env;
+};
 
 export const resolvePackagedCodexPaths = (): { executablePath: string; pathDirectory: string } | null => {
   const platformKey = `${process.platform}:${process.arch}` as CodexPlatformKey;
@@ -60,6 +82,24 @@ export const resolvePackagedCodexPaths = (): { executablePath: string; pathDirec
   }
 };
 
+export const resolveCodexCliProcessConfig = (): CodexCliProcessConfig => {
+  const packagedCodexPaths = resolvePackagedCodexPaths();
+
+  if (packagedCodexPaths) {
+    return {
+      command: packagedCodexPaths.executablePath,
+      argsPrefix: [],
+      env: createCodexEnvironment(packagedCodexPaths.pathDirectory),
+    };
+  }
+
+  return {
+    command: process.execPath,
+    argsPrefix: [resolveAsarUnpackedPath(moduleRequire.resolve('@openai/codex/bin/codex.js'))],
+    env: createCodexEnvironment(),
+  };
+};
+
 export const createCodexClient = async (): Promise<Codex> => {
   const { Codex } = await import('@openai/codex-sdk');
   const packagedCodexPaths = resolvePackagedCodexPaths();
@@ -67,13 +107,7 @@ export const createCodexClient = async (): Promise<Codex> => {
   if (packagedCodexPaths?.executablePath.includes(`${path.sep}app.asar.unpacked${path.sep}`)) {
     return new Codex({
       codexPathOverride: packagedCodexPaths.executablePath,
-      env: {
-        ...process.env,
-        PATH: [
-          packagedCodexPaths.pathDirectory,
-          process.env.PATH,
-        ].filter(Boolean).join(path.delimiter),
-      },
+      env: createCodexEnvironment(packagedCodexPaths.pathDirectory),
     });
   }
 

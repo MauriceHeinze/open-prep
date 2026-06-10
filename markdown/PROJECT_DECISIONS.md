@@ -154,6 +154,7 @@ Note:
 - Users do not need to install Codex CLI separately for OpenPrep.
 - Codex-backed writing evaluation uses a five-minute default timeout and can be overridden with `OPEN_PREP_CODEX_TIMEOUT_MS` for slower local setups.
 - Packaged Electron builds must launch the bundled Codex binary from `app.asar.unpacked`. The Codex SDK wraps the npm-provided Codex CLI, and native executables cannot be spawned from Electron's virtual `app.asar` path.
+- ChatGPT sign-in must use the bundled `codex login` flow and stored Codex CLI session. OpenPrep must not ask learners for OpenAI API keys, and the sign-in screen must not perform an unauthenticated model call as a readiness check.
 
 ## App Architecture
 
