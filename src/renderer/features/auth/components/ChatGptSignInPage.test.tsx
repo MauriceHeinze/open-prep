@@ -44,6 +44,7 @@ const renderSignInPage = async (): Promise<Root> => {
 describe('ChatGptSignInPage', () => {
   afterEach(() => {
     vi.restoreAllMocks();
+    vi.unstubAllEnvs();
     document.body.innerHTML = '';
   });
 
@@ -53,7 +54,21 @@ describe('ChatGptSignInPage', () => {
     const root = await renderSignInPage();
 
     expect(document.body.textContent).toContain('Sign in with ChatGPT');
-    expect(document.body.textContent).toContain('OpenPrep uses OpenAI Codex');
+    expect(document.body.textContent).toContain('Connect your local Codex session');
+
+    act(() => root.unmount());
+  });
+
+  it('keeps the sign-in screen visible in dev when the force flag is enabled', async () => {
+    vi.stubEnv('VITE_OPEN_PREP_SHOW_SIGN_IN', 'true');
+    window.openPrepApi = createOpenPrepApiMock({
+      getCodexAuthStatus: vi.fn().mockResolvedValue({ isAuthenticated: true }),
+    });
+
+    const root = await renderSignInPage();
+
+    expect(document.body.textContent).toContain('Sign in with ChatGPT');
+    expect(document.body.textContent).not.toContain('Prompt catalog');
 
     act(() => root.unmount());
   });

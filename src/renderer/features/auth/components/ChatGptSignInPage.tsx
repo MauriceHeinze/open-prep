@@ -5,8 +5,10 @@ import { HugeiconsIcon } from '@hugeicons/react';
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { AppLogo } from '@renderer/components/AppLogo';
+
+export const shouldForceShowSignInScreen = (): boolean =>
+  import.meta.env.DEV && import.meta.env.VITE_OPEN_PREP_SHOW_SIGN_IN === 'true';
 
 const getFriendlyErrorMessage = (error: unknown): string => {
   if (error instanceof Error && error.message.trim().length > 0) {
@@ -18,6 +20,7 @@ const getFriendlyErrorMessage = (error: unknown): string => {
 
 export const ChatGptSignInPage = (): JSX.Element => {
   const navigate = useNavigate();
+  const forceShowSignInScreen = shouldForceShowSignInScreen();
   const [isCheckingStatus, setIsCheckingStatus] = useState(true);
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -32,7 +35,7 @@ export const ChatGptSignInPage = (): JSX.Element => {
           return;
         }
 
-        if (status.isAuthenticated) {
+        if (status.isAuthenticated && !forceShowSignInScreen) {
           navigate('/catalog', { replace: true });
         }
       })
@@ -50,7 +53,7 @@ export const ChatGptSignInPage = (): JSX.Element => {
     return () => {
       isMounted = false;
     };
-  }, [navigate]);
+  }, [forceShowSignInScreen, navigate]);
 
   const handleSignIn = async (): Promise<void> => {
     setErrorMessage(null);
@@ -78,46 +81,35 @@ export const ChatGptSignInPage = (): JSX.Element => {
         <div className="signin-panel__brand">
           <AppLogo />
         </div>
-        <Card className="signin-panel__surface border-border/80 bg-card shadow-[var(--shadow)]">
-          <CardContent className="grid gap-8 p-10">
-            <div className="grid gap-4">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-primary">
-                AI evaluation setup
-              </p>
-              <div className="grid gap-3">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground">
-                  Sign in with ChatGPT
-                </h1>
-                <p className="max-w-[560px] text-lg leading-8 text-muted-foreground">
-                  OpenPrep uses OpenAI Codex to evaluate your writing. Sign in with ChatGPT to
-                  enable AI feedback.
-                </p>
-              </div>
-            </div>
-            {errorMessage ? (
-              <Alert variant="destructive">
-                <AlertTitle>Sign-in failed</AlertTitle>
-                <AlertDescription>{errorMessage}</AlertDescription>
-              </Alert>
-            ) : null}
-            <div className="flex flex-wrap items-center gap-4">
-              <Button
-                className="h-12 rounded-2xl px-6 text-base"
-                type="button"
-                disabled={isCheckingStatus || isSigningIn}
-                onClick={handleSignIn}
-              >
-                {isSigningIn ? 'Opening ChatGPT...' : 'Continue with ChatGPT'}
-                <HugeiconsIcon icon={ArrowRight02Icon} strokeWidth={2.2} data-icon="inline-end" />
-              </Button>
-              <p className="text-sm text-muted-foreground">
-                {isCheckingStatus
-                  ? 'Checking your local Codex session...'
-                  : 'You only need to do this once on this device.'}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="signin-panel__content">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground">
+            Sign in with ChatGPT
+          </h1>
+          <p className="max-w-[460px] text-base leading-7 text-muted-foreground">
+            Connect your local Codex session so OpenPrep can evaluate writing with your ChatGPT
+            account.
+          </p>
+        </div>
+        {errorMessage ? (
+          <Alert className="max-w-[520px]" variant="destructive">
+            <AlertTitle>Sign-in failed</AlertTitle>
+            <AlertDescription>{errorMessage}</AlertDescription>
+          </Alert>
+        ) : null}
+        <div className="signin-panel__actions">
+          <Button
+            className="h-11 rounded-md px-5 text-base"
+            type="button"
+            disabled={isCheckingStatus || isSigningIn}
+            onClick={handleSignIn}
+          >
+            {isSigningIn ? 'Opening ChatGPT...' : 'Continue with ChatGPT'}
+            <HugeiconsIcon icon={ArrowRight02Icon} strokeWidth={2.2} data-icon="inline-end" />
+          </Button>
+          <p className="text-sm text-muted-foreground">
+            {isCheckingStatus ? 'Checking Codex session...' : 'One-time setup on this device.'}
+          </p>
+        </div>
       </section>
     </main>
   );

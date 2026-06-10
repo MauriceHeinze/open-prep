@@ -122,24 +122,29 @@ button {
   min-height: 100vh;
   padding: 48px;
   place-items: center;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(80, 43, 113, 0.12), transparent 32%),
-    radial-gradient(circle at 82% 12%, rgba(77, 181, 130, 0.14), transparent 28%),
-    linear-gradient(135deg, #fbfaf7 0%, #f6f1fb 48%, #f8f8f8 100%);
+  background: var(--background);
 }
 
 .signin-panel {
   display: grid;
-  width: min(740px, 100%);
-  gap: 32px;
+  width: min(560px, 100%);
+  gap: 24px;
 }
 
 .signin-panel__brand {
   width: 184px;
 }
 
-.signin-panel__surface {
-  overflow: hidden;
+.signin-panel__content {
+  display: grid;
+  gap: 12px;
+}
+
+.signin-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
 }
 
 .app-logo {

@@ -114,6 +114,12 @@ For local UI work without a live AI call:
 OPEN_PREP_AI_PROVIDER=mock npm run dev
 ```
 
+To force the ChatGPT sign-in screen to stay visible during UI work:
+
+```bash
+VITE_OPEN_PREP_SHOW_SIGN_IN=true npm run dev
+```
+
 Codex-backed evaluation uses the official Codex SDK and a five-minute timeout by default. If your local setup regularly needs more time, override it in milliseconds:
 
 ```bash
