@@ -3,7 +3,7 @@
   "author": "Maurice Heinze",
   "description": "A desktop application for preparing for TOEFL® writing tasks.",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist-electron/main.js",
   "engines": {
     "node": ">=20 <26"
