@@ -8,9 +8,6 @@
     output: 'release/${version}',
   },
   files: ['dist', 'dist-electron', 'prompts'],
-  asarUnpack: [
-    'node_modules/@openai/codex*/**/*',
-  ],
   mac: {
     icon: 'build/icon.icns',
     target: ['dmg'],

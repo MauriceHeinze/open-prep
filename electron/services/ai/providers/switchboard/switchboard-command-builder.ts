@@ -58,7 +58,7 @@ const buildPromptContext = (request: WritingEvaluationRequest): string[] => {
   return context;
 };
 
-export const buildCodexPrompt = (
+export const buildSwitchboardPrompt = (
   request: WritingEvaluationRequest,
   systemPrompt: string,
 ): string =>

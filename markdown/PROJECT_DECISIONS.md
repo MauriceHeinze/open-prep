@@ -95,13 +95,16 @@ Decision:
 - Do not couple the app to Codex alone.
 - Build the AI layer as a pluggable provider system for locally callable tools.
 
-Initial provider target:
+Provider target:
 
-- `Codex` through the official Codex SDK
+- Local AI tools through `switchboard-ai-sdk`
 
-Planned future-compatible provider examples:
+Supported provider examples:
 
 - `Claude Code`
+- `Codex`
+- `Ollama`
+- `OpenCode`
 
 Why:
 
@@ -136,26 +139,23 @@ Tradeoffs:
 
 Decision:
 
-- The initial writing-evaluation provider flow should target Codex through `@openai/codex-sdk` with `gpt-5.4-mini`.
-- Reasoning should be configured toward a low reasoning mode when supported by the provider interface or command surface.
+- The writing-evaluation provider flow should use `switchboard-ai-sdk` for local AI tool discovery, authentication, and execution.
+- The app should allow users to pick any available Switchboard provider supported by the current SDK.
 
 Why:
 
-- this is the current product request
-- low reasoning may help keep evaluation flows faster and more predictable for the MVP
+- this avoids coupling OpenPrep to Codex alone
+- Switchboard keeps provider-specific CLI and auth behavior outside the app core
 
 Tradeoffs:
 
+- users need the selected local AI tool to be installed and available on their machine
 - provider SDK and runtime options may evolve over time
-- reasoning controls must be isolated from the app core because they are provider-specific
 
 Note:
 
-- Users do not need to install Codex CLI separately for OpenPrep.
-- Codex-backed writing evaluation uses a five-minute default timeout and can be overridden with `OPEN_PREP_CODEX_TIMEOUT_MS` for slower local setups.
-- Packaged Electron builds must launch the bundled Codex binary from `app.asar.unpacked`. The Codex SDK wraps the npm-provided Codex CLI, and native executables cannot be spawned from Electron's virtual `app.asar` path.
-- ChatGPT sign-in must use the bundled `codex login` flow and stored Codex CLI session. OpenPrep must not ask learners for OpenAI API keys, and the sign-in screen must not perform an unauthenticated model call as a readiness check.
-- Local UI development can force the ChatGPT sign-in screen with `VITE_OPEN_PREP_SHOW_SIGN_IN=true npm run dev`; this is a renderer-only development flag and must not change packaged app navigation.
+- Switchboard-backed writing evaluation uses a five-minute default timeout and can be overridden with `OPEN_PREP_AI_TIMEOUT_MS` for slower local setups.
+- The first app screen discovers local AI tools and stores the selected provider locally for writing submissions.
 
 ## App Architecture
 

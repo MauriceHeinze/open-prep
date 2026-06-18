@@ -8,8 +8,6 @@ import type { PromptCatalogService } from '../catalog/prompt-catalog-service';
 import type { AttemptRepository } from '../persistence/attempt-repository';
 
 export class WritingEvaluationService {
-  private readonly provider = createAiProvider();
-
   public constructor(
     private readonly promptCatalogService: PromptCatalogService,
     private readonly attemptRepository: AttemptRepository,
@@ -17,10 +15,11 @@ export class WritingEvaluationService {
 
   public async submitAttempt(input: SubmitWritingAttemptInput): Promise<WritingAttemptDetails> {
     const prompt = this.promptCatalogService.getPromptDetails(input.promptId);
-    const pendingAttempt = this.attemptRepository.createAttempt(input, this.provider.id);
+    const provider = createAiProvider(input.providerId);
+    const pendingAttempt = this.attemptRepository.createAttempt(input, provider.id);
 
     try {
-      const evaluation = await this.provider.evaluateWriting({
+      const evaluation = await provider.evaluateWriting({
         prompt,
         essayText: input.essayText,
       });

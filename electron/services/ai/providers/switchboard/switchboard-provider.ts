@@ -1,26 +1,24 @@
 import * as v from 'valibot';
+import { connect, type ProviderId } from 'switchboard-ai-sdk';
 
 import type { AiProvider, WritingEvaluationRequest } from '../../core/ai-provider';
 import type { WritingEvaluation } from '../../../../../src/shared/domain/evaluations/evaluation-types';
+import type { SwitchboardProviderType } from '../../../../../src/shared/domain/ai/provider-types';
 import { writingEvaluationSchema } from '../../../../../src/shared/schemas/evaluation-schemas';
 
-import { buildCodexPrompt } from './codex-command-builder';
-import { writingEvaluationOutputSchema } from './codex-output-schema';
-import { createCodexClient } from './codex-sdk';
-import { loadCodexSystemPrompt } from './codex-system-prompt';
+import { buildSwitchboardPrompt } from './switchboard-command-builder';
+import { loadSwitchboardSystemPrompt } from './switchboard-system-prompt';
 
-const CODEX_MODEL = 'gpt-5.4-mini';
-const CODEX_REASONING_EFFORT = 'low';
-const DEFAULT_CODEX_TIMEOUT_MS = 300_000;
+const DEFAULT_SWITCHBOARD_TIMEOUT_MS = 300_000;
 
-export const resolveCodexTimeoutMs = (
+export const resolveSwitchboardTimeoutMs = (
   environment: Record<string, string | undefined> = process.env,
 ): number => {
-  const configuredTimeoutMs = Number(environment.OPEN_PREP_CODEX_TIMEOUT_MS);
+  const configuredTimeoutMs = Number(environment.OPEN_PREP_AI_TIMEOUT_MS);
 
   return Number.isFinite(configuredTimeoutMs) && configuredTimeoutMs > 0
     ? configuredTimeoutMs
-    : DEFAULT_CODEX_TIMEOUT_MS;
+    : DEFAULT_SWITCHBOARD_TIMEOUT_MS;
 };
 
 const isValidOffset = (value: unknown): value is number =>
@@ -92,36 +90,41 @@ export const normalizeEvaluationPayload = (payload: unknown, essayText: string):
   };
 };
 
-export class CodexProvider implements AiProvider {
-  public readonly id = 'codex' as const;
+export class SwitchboardProvider implements AiProvider {
+  public constructor(public readonly id: SwitchboardProviderType) {}
 
   public async evaluateWriting(request: WritingEvaluationRequest): Promise<WritingEvaluation> {
-    const systemPrompt = await loadCodexSystemPrompt();
-    const prompt = buildCodexPrompt(request, systemPrompt);
-    const codex = await createCodexClient();
-    const thread = codex.startThread({
-      model: CODEX_MODEL,
-      modelReasoningEffort: CODEX_REASONING_EFFORT,
-      skipGitRepoCheck: true,
-    });
-    const timeoutMs = resolveCodexTimeoutMs();
+    const systemPrompt = await loadSwitchboardSystemPrompt();
+    const prompt = buildSwitchboardPrompt(request, systemPrompt);
+    const tool = await connect(this.id as ProviderId);
+    const timeoutMs = resolveSwitchboardTimeoutMs();
     const abortController = new AbortController();
     const timeout = setTimeout(() => abortController.abort(), timeoutMs);
 
     try {
-      const result = await thread.run(prompt, {
-        outputSchema: writingEvaluationOutputSchema,
-        signal: abortController.signal,
-      });
+      const result = await tool.chat(
+        {
+          messages: [
+            {
+              role: 'user',
+              content: prompt,
+            },
+          ],
+        },
+        {
+          signal: abortController.signal,
+          timeoutMs,
+        },
+      );
       const parsed = normalizeEvaluationPayload(
-        JSON.parse(result.finalResponse) as unknown,
+        JSON.parse(result.message.content) as unknown,
         request.essayText,
       );
 
       return v.parse(writingEvaluationSchema, parsed);
     } catch (error) {
       if (abortController.signal.aborted) {
-        throw new Error(`Codex evaluation timed out after ${String(timeoutMs)}ms.`);
+        throw new Error(`AI evaluation timed out after ${String(timeoutMs)}ms.`);
       }
 
       throw error;

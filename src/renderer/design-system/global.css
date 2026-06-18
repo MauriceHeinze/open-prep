@@ -116,35 +116,239 @@ button {
   place-items: center;
 }
 
-.app-page--signin {
+.app-page--tool-picker {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   width: 100%;
   min-height: 100vh;
-  padding: 48px;
-  place-items: center;
-  background: var(--background);
+  padding: 0;
+  background: #ffffff;
 }
 
-.signin-panel {
+.tool-picker__setup {
+  min-height: 100vh;
+  padding: 67px 64px 96px;
+  background: #ffffff;
+}
+
+.tool-picker__brand {
+  width: 249px;
+}
+
+.tool-picker__intro {
   display: grid;
-  width: min(560px, 100%);
+  gap: 18px;
+  max-width: 590px;
+  margin-top: 207px;
+}
+
+.tool-picker__intro h1 {
+  margin: 0;
+  color: #131313;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.tool-picker__intro p {
+  max-width: 584px;
+  margin: 0;
+  color: #444444;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.tool-picker__alert {
+  align-self: start;
+  max-width: 790px;
+  margin-bottom: 20px;
+}
+
+.tool-picker__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 18px;
+  width: 622px;
+  margin-top: 65px;
+}
+
+.tool-picker__provider {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.tool-picker__provider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  height: 58px;
+  padding: 0 26px;
+  border: 2px solid #cfcfcf;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #444444;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.tool-picker__provider-button:not(:disabled):hover {
+  border-color: #502b71;
+  box-shadow: 0 12px 24px rgba(80, 43, 113, 0.12);
+}
+
+.tool-picker__provider-button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.tool-picker__provider-button:disabled {
+  cursor: not-allowed;
+  border-color: #e1e1e1;
+  color: #9b9b9b;
+  box-shadow: none;
+}
+
+.provider-logo {
+  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.provider-logo--codex {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  object-position: center;
+  clip-path: circle(46% at 50% 50%);
+}
+
+.provider-logo--opencode {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.provider-logo--ollama {
+  width: 31px;
+  height: 31px;
+}
+
+.tool-picker__provider-button:disabled .provider-logo {
+  opacity: 0.58;
+}
+
+.tool-picker__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 20px;
+  margin: 0;
+  color: #a1a1a1;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.tool-picker__status span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #30c08b;
+}
+
+.tool-picker__status.is-unavailable span {
+  background: #e10c08;
+}
+
+.tool-picker__benefits {
+  display: grid;
+  min-height: 100vh;
+  padding: 0 64px;
+  place-items: center;
+  background: #5e2f7d;
+}
+
+.tool-picker__benefit-panel {
+  display: grid;
   gap: 24px;
+  width: 628px;
+  height: 310px;
+  padding: 43px 48px;
+  border: 1px solid rgba(80, 43, 113, 0.2);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 46px rgba(36, 15, 52, 0.22);
 }
 
-.signin-panel__brand {
-  width: 184px;
+.tool-picker__benefit-panel h2 {
+  margin: 0;
+  color: #131313;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
-.signin-panel__content {
+.tool-picker__benefit-panel p {
+  max-width: 535px;
+  margin: 0;
+  color: #474747;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.tool-picker__benefit-panel ul {
   display: grid;
   gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.signin-panel__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
+.tool-picker__benefit-panel li {
+  position: relative;
+  min-height: 20px;
+  padding-left: 31px;
+  color: #444444;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.tool-picker__benefit-panel li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: #30c08b;
+  content: '';
+}
+
+.tool-picker__benefit-panel li::after {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  content: '';
+  transform: rotate(45deg);
 }
 
 .app-logo {

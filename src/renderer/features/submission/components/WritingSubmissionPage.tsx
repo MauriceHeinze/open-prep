@@ -13,8 +13,10 @@ import { Label } from '@/components/ui/label';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Textarea } from '@/components/ui/textarea';
 import { EvaluationPendingState } from '@renderer/features/submission/components/EvaluationPendingState';
+import { SELECTED_AI_TOOL_STORAGE_KEY } from '@renderer/features/auth/components/AiToolPickerPage';
 import { usePromptDetails } from '@renderer/features/submission/hooks/usePromptDetails';
 import { resolvePublicAssetUrl } from '@renderer/lib/resolve-public-asset-url';
+import type { AiProviderType } from '@shared/domain/ai/provider-types';
 
 const discussionRoleLabels = {
   professor: 'Professor',
@@ -96,9 +98,17 @@ export const WritingSubmissionPage = (): JSX.Element => {
     setSubmissionError(null);
 
     try {
+      const providerId = window.localStorage.getItem(SELECTED_AI_TOOL_STORAGE_KEY) as AiProviderType | null;
+
+      if (!providerId) {
+        navigate('/', { replace: true });
+        return;
+      }
+
       const attempt = await window.openPrepApi.submitWritingAttempt({
         promptId: prompt.id,
         essayText,
+        providerId,
       });
 
       navigate(`/attempts/${attempt.id}`);

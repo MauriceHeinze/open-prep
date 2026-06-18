@@ -26,4 +26,5 @@ export type WritingAttemptDetails = {
 export type SubmitWritingAttemptInput = {
   promptId: string;
   essayText: string;
+  providerId: AiProviderType;
 };

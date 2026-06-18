@@ -2,14 +2,14 @@
   <img src="public/logo/logo_full.svg" alt="OpenPrep" width="360" />
 </p>
 
-<h3 align="center">Open-source TOEFL® Writing practice powered by your existing ChatGPT subscription.</h3>
+<h3 align="center">Open-source TOEFL® Writing practice powered by local AI tools.</h3>
 
 <p align="center">
   Practice TOEFL®-style writing tasks, get structured AI feedback, and track your progress without paying for another full exam prep platform.
 </p>
 
 <p align="center">
-  OpenPrep is for learners who already have access to ChatGPT or Codex and mainly want to improve their Writing score. Instead of starting from an empty chat window, you get a focused desktop workflow: pick a prompt, write your response, submit it, review feedback, and improve over time.
+  OpenPrep is for learners who already use local AI tools such as Codex, Claude Code, Ollama, or OpenCode and mainly want to improve their Writing score. Instead of starting from an empty chat window, you get a focused desktop workflow: pick a prompt, write your response, submit it, review feedback, and improve over time.
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@ TOEFL® prep tools can get expensive fast, and not every learner needs a full pl
 OpenPrep is built for that use case:
 
 - **Focus on Writing first.** Start with TOEFL®-style writing prompts instead of paying for a full-course prep app you may not need.
-- **Use the AI you already pay for.** OpenPrep uses the official Codex SDK so learners can sign in with ChatGPT for AI evaluation without installing a separate Codex CLI.
+- **Use the AI tools you already have.** OpenPrep uses Switchboard to connect to local AI tools such as Codex, Claude Code, Ollama, and OpenCode.
 - **Practice in a structured flow.** Choose a prompt, write your response, submit it, and review the result in one consistent workflow.
 - **Get feedback you can study.** Scores, criterion notes, improvement points, and phrase-level feedback are shown in a structured UI instead of a long chat transcript.
 - **See your progress.** Attempts are saved locally so you can review earlier work and track improvement over time.
@@ -48,7 +48,7 @@ OpenPrep is more useful than opening ChatGPT alone because it gives you curated 
 
 ### Choose a Prompt
 
-OpenPrep starts with a ChatGPT sign-in screen for AI evaluation, then opens a catalog of writing tasks so practice begins with a concrete exam-style assignment, not a blank chat.
+OpenPrep starts with a local AI tool picker for evaluation, then opens a catalog of writing tasks so practice begins with a concrete exam-style assignment, not a blank chat.
 
 ![Prompt list](product_images/Prompts%20List.png)
 
@@ -78,7 +78,7 @@ OpenPrep is in an early open-source preview. The current vertical slice focuses 
 
 - prompt catalog
 - writing submission flow
-- Codex-backed writing evaluation
+- Switchboard-backed writing evaluation
 - structured feedback UI
 - local persistence foundation
 - progress-oriented attempt storage
@@ -101,7 +101,7 @@ Recommended runtime:
 
 - Node.js `22`
 - macOS
-- ChatGPT sign-in if you want live AI evaluation
+- a supported local AI tool if you want live AI evaluation
 
 ```bash
 npm install
@@ -114,16 +114,10 @@ For local UI work without a live AI call:
 OPEN_PREP_AI_PROVIDER=mock npm run dev
 ```
 
-To force the ChatGPT sign-in screen to stay visible during UI work:
+Switchboard-backed evaluation uses a five-minute timeout by default. If your local setup regularly needs more time, override it in milliseconds:
 
 ```bash
-VITE_OPEN_PREP_SHOW_SIGN_IN=true npm run dev
-```
-
-Codex-backed evaluation uses the official Codex SDK and a five-minute timeout by default. If your local setup regularly needs more time, override it in milliseconds:
-
-```bash
-OPEN_PREP_CODEX_TIMEOUT_MS=600000 npm run dev
+OPEN_PREP_AI_TIMEOUT_MS=600000 npm run dev
 ```
 
 Useful checks:
@@ -151,7 +145,7 @@ OpenPrep keeps the desktop security boundary explicit:
 - `main` owns persistence, provider calls, and privileged work.
 - `shared/domain` contains contracts, schemas, and pure domain types.
 
-The AI provider layer is deliberately pluggable. Codex via the official SDK is the first implementation target, but provider-specific prompt, parsing, and failure handling live behind a common interface so future tools can be added without rebuilding the app around one vendor.
+The AI provider layer is deliberately pluggable. Switchboard handles local tool discovery, authentication, and execution while OpenPrep keeps prompt construction, parsing, and failure handling behind a common interface.
 
 This architecture matters, but it is supporting infrastructure rather than the headline. The main product idea is still simple: give TOEFL® Writing learners a focused workflow that feels like practice, not a chatbot thread.
 

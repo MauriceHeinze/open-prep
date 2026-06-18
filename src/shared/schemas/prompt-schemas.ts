@@ -70,6 +70,7 @@ export const storedPromptFileSchema = v.array(
 export const submitWritingAttemptInputSchema = v.object({
   promptId: v.string(),
   essayText: v.pipe(v.string(), v.minLength(50)),
+  providerId: aiProviderTypeSchema,
 });
 
 export const providerConfigSchema = v.object({

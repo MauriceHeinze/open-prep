@@ -1,6 +1,6 @@
 import { createBrowserRouter, createHashRouter } from 'react-router-dom';
 
-import { ChatGptSignInPage } from '@renderer/features/auth/components/ChatGptSignInPage';
+import { AiToolPickerPage } from '@renderer/features/auth/components/AiToolPickerPage';
 import { WritingEvaluationPage } from '@renderer/features/evaluation/components/WritingEvaluationPage';
 import { PromptCatalogPage } from '@renderer/features/prompts/components/PromptCatalogPage';
 import { WritingSubmissionPage } from '@renderer/features/submission/components/WritingSubmissionPage';
@@ -8,7 +8,7 @@ import { WritingSubmissionPage } from '@renderer/features/submission/components/
 const routes = [
   {
     path: '/',
-    element: <ChatGptSignInPage />,
+    element: <AiToolPickerPage />,
   },
   {
     path: '/catalog',

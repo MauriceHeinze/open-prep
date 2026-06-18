@@ -2,16 +2,15 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { PromptDetails } from '../../../../../src/shared/domain/prompts/prompt-types';
 
-import { CodexProvider, normalizeEvaluationPayload } from './codex-provider';
+import { SwitchboardProvider, normalizeEvaluationPayload } from './switchboard-provider';
 
-const codexMocks = vi.hoisted(() => ({
-  Codex: vi.fn(),
-  run: vi.fn(),
-  startThread: vi.fn(),
+const switchboardMocks = vi.hoisted(() => ({
+  chat: vi.fn(),
+  connect: vi.fn(),
 }));
 
-vi.mock('@openai/codex-sdk', () => ({
-  Codex: codexMocks.Codex,
+vi.mock('switchboard-ai-sdk', () => ({
+  connect: switchboardMocks.connect,
 }));
 
 const baseEvaluation = {
@@ -91,14 +90,11 @@ describe('normalizeEvaluationPayload', () => {
   });
 });
 
-describe('CodexProvider', () => {
+describe('SwitchboardProvider', () => {
   beforeEach(() => {
     vi.unstubAllEnvs();
-    codexMocks.Codex.mockImplementation(() => ({
-      startThread: codexMocks.startThread,
-    }));
-    codexMocks.startThread.mockReturnValue({
-      run: codexMocks.run,
+    switchboardMocks.connect.mockResolvedValue({
+      chat: switchboardMocks.chat,
     });
   });
 
@@ -108,42 +104,50 @@ describe('CodexProvider', () => {
     vi.unstubAllEnvs();
   });
 
-  it('evaluates writing through the Codex SDK', async () => {
-    codexMocks.run.mockResolvedValue({
-      finalResponse: JSON.stringify({
-        ...baseEvaluation,
-        highlights: [],
-      }),
+  it('evaluates writing through the selected Switchboard tool', async () => {
+    switchboardMocks.chat.mockResolvedValue({
+      message: {
+        role: 'assistant',
+        content: JSON.stringify({
+          ...baseEvaluation,
+          highlights: [],
+        }),
+      },
     });
 
-    const provider = new CodexProvider();
+    const provider = new SwitchboardProvider('opencode');
     const result = await provider.evaluateWriting({
       prompt: basePrompt,
       essayText: 'Remote work is useful for many employees.',
     });
 
     expect(result.summary).toBe(baseEvaluation.summary);
-    expect(codexMocks.Codex).toHaveBeenCalledWith();
-    expect(codexMocks.startThread).toHaveBeenCalledWith({
-      model: 'gpt-5.4-mini',
-      modelReasoningEffort: 'low',
-      skipGitRepoCheck: true,
-    });
-    expect(codexMocks.run).toHaveBeenCalledWith(
-      expect.stringContaining('Student essay:'),
+    expect(switchboardMocks.connect).toHaveBeenCalledWith('opencode');
+    expect(switchboardMocks.chat).toHaveBeenCalledWith(
+      {
+        messages: [
+          {
+            role: 'user',
+            content: expect.stringContaining('Student essay:'),
+          },
+        ],
+      },
       expect.objectContaining({
-        outputSchema: expect.objectContaining({ type: 'object' }),
         signal: expect.any(AbortSignal),
+        timeoutMs: 300_000,
       }),
     );
   });
 
-  it('rejects malformed JSON returned by the SDK', async () => {
-    codexMocks.run.mockResolvedValue({
-      finalResponse: 'not json',
+  it('rejects malformed JSON returned by the tool', async () => {
+    switchboardMocks.chat.mockResolvedValue({
+      message: {
+        role: 'assistant',
+        content: 'not json',
+      },
     });
 
-    const provider = new CodexProvider();
+    const provider = new SwitchboardProvider('codex');
 
     await expect(
       provider.evaluateWriting({
@@ -153,16 +157,19 @@ describe('CodexProvider', () => {
     ).rejects.toThrow();
   });
 
-  it('rejects invalid evaluation payloads returned by the SDK', async () => {
-    codexMocks.run.mockResolvedValue({
-      finalResponse: JSON.stringify({
-        ...baseEvaluation,
-        overallScore: 99,
-        highlights: [],
-      }),
+  it('rejects invalid evaluation payloads returned by the tool', async () => {
+    switchboardMocks.chat.mockResolvedValue({
+      message: {
+        role: 'assistant',
+        content: JSON.stringify({
+          ...baseEvaluation,
+          overallScore: 99,
+          highlights: [],
+        }),
+      },
     });
 
-    const provider = new CodexProvider();
+    const provider = new SwitchboardProvider('codex');
 
     await expect(
       provider.evaluateWriting({
@@ -172,33 +179,34 @@ describe('CodexProvider', () => {
     ).rejects.toThrow();
   });
 
-  it('aborts SDK evaluation when the Codex timeout elapses', async () => {
-    vi.stubEnv('OPEN_PREP_CODEX_TIMEOUT_MS', '1');
-    codexMocks.run.mockImplementation((_prompt: string, options: { signal: AbortSignal }) =>
-      new Promise((_resolve, reject) => {
-        options.signal.addEventListener('abort', () => reject(new Error('aborted')));
-      }),
+  it('aborts evaluation when the timeout elapses', async () => {
+    vi.stubEnv('OPEN_PREP_AI_TIMEOUT_MS', '1');
+    switchboardMocks.chat.mockImplementation(
+      (_input: unknown, options: { signal: AbortSignal }) =>
+        new Promise((_resolve, reject) => {
+          options.signal.addEventListener('abort', () => reject(new Error('aborted')));
+        }),
     );
 
-    const provider = new CodexProvider();
+    const provider = new SwitchboardProvider('codex');
     const evaluation = provider.evaluateWriting({
       prompt: basePrompt,
       essayText: 'Remote work is useful for many employees.',
     });
 
-    await expect(evaluation).rejects.toThrow('Codex evaluation timed out after 1ms.');
+    await expect(evaluation).rejects.toThrow('AI evaluation timed out after 1ms.');
   });
 
-  it('surfaces SDK failures', async () => {
-    codexMocks.run.mockRejectedValue(new Error('SDK failed'));
+  it('surfaces Switchboard failures', async () => {
+    switchboardMocks.chat.mockRejectedValue(new Error('Switchboard failed'));
 
-    const provider = new CodexProvider();
+    const provider = new SwitchboardProvider('codex');
 
     await expect(
       provider.evaluateWriting({
         prompt: basePrompt,
         essayText: 'Remote work is useful for many employees.',
       }),
-    ).rejects.toThrow('SDK failed');
+    ).rejects.toThrow('Switchboard failed');
   });
 });
