@@ -112,8 +112,8 @@ describe('AiToolPickerPage', () => {
     expect(document.body.textContent).toContain('Connect ChatGPT');
     expect(document.body.textContent).toContain('Connect OpenCode');
     expect(document.body.textContent).toContain('Connect Ollama');
-    expect(document.body.textContent).toContain('Practice TOEFL Writing with AI feedback');
-    expect(document.body.textContent).toContain('TOEFL-style prompts');
+    expect(document.body.textContent).toContain('Practice TOEFL® Writing with AI feedback');
+    expect(document.body.textContent).toContain('TOEFL®-style prompts');
 
     act(() => root.unmount());
   });
