@@ -60,6 +60,11 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            release/**/*
+            release/**/*.dmg
+            release/**/*.dmg.blockmap
+            release/**/*.exe
+            release/**/*.exe.blockmap
+            release/**/*.AppImage
+            release/**/latest*.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
