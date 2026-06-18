@@ -61,10 +61,7 @@ jobs:
         with:
           files: |
             release/**/OpenPrep-Mac-*-Installer.dmg
-            release/**/OpenPrep-Mac-*-Installer.dmg.blockmap
             release/**/OpenPrep-Windows-*-Setup.exe
-            release/**/OpenPrep-Windows-*-Setup.exe.blockmap
             release/**/OpenPrep-Linux-*.AppImage
-            release/**/latest*.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
