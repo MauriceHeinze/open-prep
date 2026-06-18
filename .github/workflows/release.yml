@@ -60,11 +60,11 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            release/**/*.dmg
-            release/**/*.dmg.blockmap
-            release/**/*.exe
-            release/**/*.exe.blockmap
-            release/**/*.AppImage
+            release/**/OpenPrep-Mac-*-Installer.dmg
+            release/**/OpenPrep-Mac-*-Installer.dmg.blockmap
+            release/**/OpenPrep-Windows-*-Setup.exe
+            release/**/OpenPrep-Windows-*-Setup.exe.blockmap
+            release/**/OpenPrep-Linux-*.AppImage
             release/**/latest*.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
