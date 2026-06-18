@@ -53,7 +53,7 @@ jobs:
         run: npm test
 
       - name: Build desktop app
-        run: npm run build
+        run: npm run build -- --publish never
 
       - name: Upload release assets
         uses: softprops/action-gh-release@v2
