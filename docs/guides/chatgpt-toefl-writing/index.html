@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to use ChatGPT to practice TOEFL® Writing effectively, with prompts, rubrics, and tips for structured feedback." />
+  <title>How to Use ChatGPT for TOEFL® Writing Practice</title>
+  <link rel="canonical" href="https://mauriceheinze.github.io/open-prep/guides/chatgpt-toefl-writing" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo/logo_icon_only.svg" />
+  <meta property="og:title" content="How to Use ChatGPT for TOEFL® Writing Practice" />
+  <meta property="og:description" content="Learn how to use ChatGPT to practice TOEFL® Writing effectively, with prompts, rubrics, and tips for structured feedback." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mauriceheinze.github.io/open-prep/guides/chatgpt-toefl-writing" />
+  <meta property="og:image" content="https://mauriceheinze.github.io/open-prep/assets/product_images/Task%20Detail%20Page.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Use ChatGPT for TOEFL Writing Practice",
+    "description": "A practical guide to using ChatGPT for TOEFL Writing practice, including prompts and rubrics.",
+    "url": "https://mauriceheinze.github.io/open-prep/guides/chatgpt-toefl-writing",
+    "author": {"@type": "Organization", "name": "OpenPrep"},
+    "publisher": {"@type": "Organization", "name": "OpenPrep"}
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #502b71; --purple-bright: #5e2f7d; --purple-soft: #f6f1fb;
+      --green: #30c08b; --green-dark: #28a879; --success: #4db582;
+      --bg: #f8f8f8; --white: #ffffff; --text: #131313; --text-soft: #444444;
+      --border: #ded4e8; --border-light: #e9e4ed; --radius: 16px; --radius-lg: 24px;
+      --shadow: 0 8px 30px rgba(80,43,113,0.06); --shadow-md: 0 12px 40px rgba(80,43,113,0.1);
+      --font-heading: 'Nunito', 'Segoe UI', sans-serif; --font-sans: 'Roboto', 'Segoe UI', sans-serif;
+    }
+    body { font-family: var(--font-sans); background: var(--white); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; height: auto; }
+    .container { width: min(780px, 100% - 48px); margin: 0 auto; }
+    .header { background: var(--white); border-bottom: 1px solid var(--border-light); }
+    .header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .header__logo img { height: 36px; }
+    .header__nav { display: flex; gap: 24px; }
+    .header__nav a { font-size: 0.95rem; font-weight: 500; color: var(--text-soft); }
+    .header__nav a:hover { color: var(--purple); }
+    .article { padding: 64px 0; }
+    .article h1 { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .article .lede { font-size: 1.15rem; color: var(--text-soft); margin-bottom: 32px; }
+    .article h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 800; margin: 40px 0 16px; }
+    .article h3 { font-size: 1.25rem; font-weight: 700; margin: 28px 0 10px; color: var(--purple); }
+    .article p { margin-bottom: 16px; color: var(--text-soft); }
+    .article ul, .article ol { margin: 0 0 20px 24px; color: var(--text-soft); }
+    .article li { margin-bottom: 8px; }
+    .article pre { background: var(--bg); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 16px; overflow-x: auto; font-size: 0.9rem; margin-bottom: 20px; }
+    .article code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .cta-box { background: var(--purple-soft); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; margin: 40px 0; text-align: center; }
+    .cta-box h3 { margin-top: 0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 28px; border-radius: 999px; font-size: 1rem; font-weight: 700; background: var(--green); color: #fff; }
+    .btn:hover { background: var(--green-dark); }
+    .related { background: var(--bg); padding: 48px 0; }
+    .related h2 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; }
+    .related ul { list-style: none; margin: 0; }
+    .related li { margin-bottom: 8px; }
+    .related a { color: var(--purple); font-weight: 500; text-decoration: underline; }
+    .footer { background: var(--text); color: rgba(255,255,255,0.55); padding: 40px 0; font-size: 0.875rem; }
+    .footer a { color: rgba(255,255,255,0.55); text-decoration: underline; }
+    @media (max-width: 600px) { .header__nav { display: none; } .article h1 { font-size: 2rem; } }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="../../" class="header__logo"><img src="../../assets/logo/logo_full.svg" alt="OpenPrep" /></a>
+    <nav class="header__nav">
+      <a href="../../">Home</a>
+      <a href="../../#features">Features</a>
+      <a href="../../#how-it-works">How it works</a>
+      <a href="../../#pricing">Pricing</a>
+      <a href="../toefl-writing-complete-guide" target="_blank" rel="noopener">Guides</a>
+      <a href="../../#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article">
+  <div class="container">
+    <h1>How to Use ChatGPT for TOEFL® Writing Practice</h1>
+    <p class="lede">ChatGPT can be a flexible TOEFL® Writing tutor, but only if you give it the right structure. This guide shows how to prompt ChatGPT for realistic practice and useful feedback.</p>
+
+    <h2>Why ChatGPT alone is not enough</h2>
+    <p>ChatGPT is great at explaining grammar and suggesting rewrites, but it does not keep your prompts organized, save your attempts, or enforce a consistent scoring rubric. If you paste random essays into chat threads, you end up with scattered feedback that is hard to study from.</p>
+
+    <h2>Step 1: Give ChatGPT a clear role</h2>
+    <p>Start each session by telling ChatGPT exactly what you want it to do. For example:</p>
+    <pre><code>You are an experienced TOEFL Writing rater. I will paste my response to a TOEFL Writing task. Evaluate it using the official TOEFL Writing rubric and give me:
+1. An overall TOEFL score from 0 to 30.
+2. Subscores for task response, organization, development, and language use.
+3. Three strengths.
+4. Three weaknesses with examples.
+5. Three phrase-level rewrites to sound more academic.</code></pre>
+
+    <h2>Step 2: Provide the full task</h2>
+    <p>Always paste the original prompt, the reading passage (if any), and the lecture summary (if any). ChatGPT needs context to judge whether your response addresses the task accurately.</p>
+
+    <h2>Step 3: Ask for a rewrite plan, not just a new essay</h2>
+    <p>It is tempting to ask ChatGPT to rewrite your whole essay. That is less useful than asking it to explain <em>why</em> specific sentences are weak and how <em>you</em> could rewrite them. Use prompts like:</p>
+    <ul>
+      <li>“Which three sentences weaken my argument the most?”</li>
+      <li>“Rewrite this paragraph to improve transitions.”</li>
+      <li>“Suggest more academic vocabulary for these phrases.”</li>
+    </ul>
+
+    <h2>Step 4: Track your progress</h2>
+    <p>Save each essay, the prompt, and the feedback in a document or spreadsheet. Look for patterns. If your organization score is always the lowest, that is your priority skill for the next week.</p>
+
+    <h2>A faster option: OpenPrep</h2>
+    <p>If you want the power of ChatGPT without writing prompts every time, <a href="../../">OpenPrep</a> automates the workflow. It sends your essay to ChatGPT via Codex with a structured evaluation prompt and displays the feedback as a clean report with scores, criterion notes, and phrase-level coaching. Your attempts are saved locally, so you can track progress over time.</p>
+
+    <div class="cta-box">
+      <h3>Turn ChatGPT into a structured TOEFL® coach</h3>
+      <p>OpenPrep uses the AI you already have. Download the free macOS app and start getting rubric-based writing feedback.</p>
+      <a href="https://github.com/MauriceHeinze/open-prep/releases" class="btn">Download OpenPrep for macOS</a>
+    </div>
+  </div>
+</main>
+
+<section class="related">
+  <div class="container">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="../toefl-writing-complete-guide">The Complete TOEFL® Writing Guide</a></li>
+      <li><a href="../ai-feedback-toefl-essays">How to Get AI Feedback on TOEFL® Essays</a></li>
+      <li><a href="../free-toefl-writing-practice-tools">Free TOEFL® Writing Practice Tools Compared</a></li>
+      <li><a href="../openprep-vs-magoosh">OpenPrep vs Magoosh for TOEFL® Writing</a></li>
+      <li><a href="../toefl-academic-discussion-examples">TOEFL® Academic Discussion Task Examples</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>OpenPrep is an independent open-source project. TOEFL® is a registered trademark of ETS. <a href="https://github.com/MauriceHeinze/open-prep">View on GitHub</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

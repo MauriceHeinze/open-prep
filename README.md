@@ -13,6 +13,10 @@
 </p>
 
 <p align="center">
+  <strong>Quick facts:</strong> free & open source (MIT) · macOS desktop app · uses AI you already have · no account required · local data storage
+</p>
+
+<p align="center">
   <a href="https://github.com/MauriceHeinze/open-prep/releases"><strong>Download the latest release</strong></a>
   ·
   <a href="#run-it-locally">Run locally</a>
@@ -136,6 +140,38 @@ npm run build
 
 If Electron fails to install correctly, use Node 22, remove `node_modules`, and run `npm install` again. The current Electron toolchain is tested against the CommonJS path used by `vite-plugin-electron` and is not intended for Node 26.
 
+## Recommended AI Agent Prompt
+
+<table>
+  <tr>
+    <td>
+      <p>
+        <strong>RECOMMENDED</strong>
+        &nbsp;&nbsp;
+        <strong>AI AGENT PROMPT</strong>
+      </p>
+      <p>
+        Copy this prompt into your coding agent before making larger changes. It gives the agent the minimum repo context up front and points it to the project instructions it should follow.
+      </p>
+      <pre><code>Work in this repository using the existing package manager and scripts.
+
+First:
+1. Install dependencies if needed.
+2. Read and follow AGENTS.md.
+3. Read markdown/PRODUCT.md and markdown/ENGINEERING.md for product and implementation context.
+
+When making changes:
+- preserve the Electron security boundary between renderer, preload, and main
+- keep domain contracts and validation explicit
+- do not assume missing requirements; inspect the codebase first
+- run the relevant checks before finishing (npm run typecheck, npm run lint, npm test when applicable)
+
+If something is unclear, ask follow-up questions instead of guessing.</code></pre>
+
+    </td>
+  </tr>
+</table>
+
 ## How It Works
 
 OpenPrep keeps the desktop security boundary explicit:
@@ -151,6 +187,8 @@ This architecture matters, but it is supporting infrastructure rather than the h
 
 ## Project Docs
 
+- Website: [https://mauriceheinze.github.io/open-prep/](https://mauriceheinze.github.io/open-prep/)
+- TOEFL® Writing guides: [https://mauriceheinze.github.io/open-prep/guides/toefl-writing-complete-guide](https://mauriceheinze.github.io/open-prep/guides/toefl-writing-complete-guide)
 - Product vision: [markdown/PRODUCT.md](markdown/PRODUCT.md)
 - Engineering standards: [markdown/ENGINEERING.md](markdown/ENGINEERING.md)
 - Technical decisions: [markdown/PROJECT_DECISIONS.md](markdown/PROJECT_DECISIONS.md)

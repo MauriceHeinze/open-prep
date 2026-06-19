@@ -3,9 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The cheapest way to master TOEFL&reg; Writing. Structured AI feedback using the AI you already have — free and open source." />
-  <title>OpenPrep — Free TOEFL&reg; Writing Practice</title>
+  <meta name="description" content="Practice TOEFL&reg; Writing for free with structured AI feedback. Curated prompts, rubric-based scores, CEFR levels, and phrase-level coaching. Open source." />
+  <title>OpenPrep — Free TOEFL&reg; Writing Practice with AI Feedback</title>
+  <link rel="canonical" href="https://mauriceheinze.github.io/open-prep/" />
   <link rel="icon" type="image/svg+xml" href="./assets/logo/logo_icon_only.svg" />
+  <meta property="og:title" content="OpenPrep — Free TOEFL&reg; Writing Practice with AI Feedback" />
+  <meta property="og:description" content="Practice TOEFL&reg; Writing for free with structured AI feedback. Curated prompts, rubric-based scores, CEFR levels, and phrase-level coaching. Open source." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mauriceheinze.github.io/open-prep/" />
+  <meta property="og:image" content="https://mauriceheinze.github.io/open-prep/assets/product_images/Task%20Detail%20Page.png" />
+  <meta property="og:site_name" content="OpenPrep" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OpenPrep — Free TOEFL&reg; Writing Practice with AI Feedback" />
+  <meta name="twitter:description" content="Practice TOEFL&reg; Writing for free with structured AI feedback. Curated prompts, rubric-based scores, CEFR levels, and phrase-level coaching. Open source." />
+  <meta name="twitter:image" content="https://mauriceheinze.github.io/open-prep/assets/product_images/Task%20Detail%20Page.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OpenPrep",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "macOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free, open-source TOEFL&reg; Writing practice with structured AI feedback.",
+    "url": "https://mauriceheinze.github.io/open-prep/",
+    "sameAs": ["https://github.com/MauriceHeinze/open-prep"],
+    "featureList": "Curated TOEFL-style writing prompts, rubric-based scores, CEFR levels, phrase-level feedback, local progress tracking"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is OpenPrep really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. OpenPrep is MIT licensed and free forever. No subscription, no usage limits, no hidden costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a paid AI subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It works with whatever AI tools you already have — ChatGPT via Codex, Claude Code, OpenCode, or local Ollama models."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this an official TOEFL product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. OpenPrep is an independent open-source practice tool. TOEFL is a registered trademark of ETS."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How hard is it to set up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Very easy. Download the macOS DMG, open the app, and click your installed AI tool. No config files or API keys."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are my essays stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On your Mac. OpenPrep saves every attempt locally so your practice history is always available, even offline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will it support IELTS or Cambridge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — the architecture supports multiple exams and sections. Writing is the first focus; more exams are planned."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -37,7 +122,7 @@
 
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-sans); background: var(--white); color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; }
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; text-decoration: none; }
 
     .container { width: min(1140px, 100% - 48px); margin: 0 auto; }
@@ -218,9 +303,11 @@
   <div class="container">
     <a href="#" class="header__logo"><img src="./assets/logo/logo_full.svg" alt="OpenPrep" /></a>
     <nav class="header__nav">
+      <a href="./">Home</a>
       <a href="#features">Features</a>
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
+      <a href="./guides/toefl-writing-complete-guide" target="_blank" rel="noopener">Guides</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="header__actions">
@@ -236,8 +323,8 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container">
-    <h1>The cheapest way to master <em>TOEFL&reg; Writing</em>.</h1>
-    <p class="hero__sub">Structured AI feedback using the AI you already have. Curated prompts, real scores, and phrase-level coaching — free forever.</p>
+    <h1>Master <em>TOEFL&reg; Writing</em> with structured AI feedback — for free.</h1>
+    <p class="hero__sub">Structured AI feedback using the AI you already have. Curated prompts, rubric-based scores, and phrase-level coaching — free forever.</p>
     <div class="hero__ctas">
       <a href="https://github.com/MauriceHeinze/open-prep/releases" class="btn btn-green btn-lg">Download for macOS</a>
       <a href="https://github.com/MauriceHeinze/open-prep" class="btn btn-outline btn-lg" target="_blank" rel="noopener">View on GitHub</a>
@@ -252,7 +339,7 @@
       </span>
     </div>
     <div class="hero__demo">
-      <img src="./assets/product_images/Task%20Detail%20Page.png" alt="OpenPrep writing workspace" />
+      <img src="./assets/product_images/Task%20Detail%20Page.png" alt="OpenPrep TOEFL Writing practice workspace with prompt and response editor" width="1920" height="1080" />
     </div>
   </div>
 </section>
@@ -261,9 +348,9 @@
 <section id="pricing" class="comparison section">
   <div class="container">
     <div class="comparison__header">
-      <div class="comparison__badge">We offer more</div>
-      <h2>Better Writing prep. Zero cost. No catch.</h2>
-      <p>Get structured TOEFL&reg; Writing feedback without paying for a full prep course.</p>
+      <div class="comparison__badge">Free & open source</div>
+      <h2>Focused Writing prep. Zero cost. No catch.</h2>
+      <p>Get structured TOEFL&reg; Writing feedback with a tool built just for Writing practice.</p>
     </div>
     <div class="comparison-grid">
       <div class="comparison-card comparison-card--openprep">
@@ -290,7 +377,7 @@
           </li>
           <li>
             <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#30c08b"/><path d="M6 10l3 3 5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Works with your existing AI subscription
+            Works with your existing AI setup
           </li>
           <li>
             <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#30c08b"/><path d="M6 10l3 3 5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -299,23 +386,23 @@
         </ul>
       </div>
       <div class="comparison-card comparison-card--other">
-        <div class="comparison-card__brand">Other prep platforms</div>
+        <div class="comparison-card__brand">Typical full-course prep</div>
         <ul>
           <li>
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#e10c08"/><path d="M7 7l6 6M13 7l-6 6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-            $50–100/month subscription
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#9ca3af" stroke-width="2"/></svg>
+            Paid subscription for full access
           </li>
           <li>
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#e10c08"/><path d="M7 7l6 6M13 7l-6 6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-            Forces all sections, even if you only need Writing
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#9ca3af" stroke-width="2"/></svg>
+            All four sections: Reading, Listening, Speaking, Writing
           </li>
           <li>
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#e10c08"/><path d="M7 7l6 6M13 7l-6 6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-            Your data stored on their servers
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#9ca3af" stroke-width="2"/></svg>
+            Video lessons and structured study schedules
           </li>
           <li>
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#e10c08"/><path d="M7 7l6 6M13 7l-6 6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-            Pay for AI access you already have
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#9ca3af" stroke-width="2"/></svg>
+            Cloud-based account and progress tracking
           </li>
         </ul>
       </div>
@@ -328,12 +415,12 @@
   <div class="container">
     <div class="split-section__content">
       <h2>Built for focused Writing practice</h2>
-      <p>Most prep platforms make you pay for Reading, Listening, and Speaking when Writing is the only section holding you back. OpenPrep starts where you actually need help.</p>
+      <p>Many all-in-one prep courses cover Reading, Listening, Speaking, and Writing. If Writing is the only section you want to focus on, OpenPrep starts where you actually need help.</p>
       <p>Pick a prompt, write your response, and get structured feedback in a desktop workspace designed for deep practice.</p>
       <a href="https://github.com/MauriceHeinze/open-prep/releases" class="btn btn-purple">Download for macOS</a>
     </div>
     <div class="split-section__visual">
-      <img src="./assets/product_images/Prompts%20List.png" alt="OpenPrep prompt catalog" />
+      <img src="./assets/product_images/Prompts%20List.png" alt="OpenPrep curated TOEFL Writing prompt catalog showing academic discussion and email tasks" width="1920" height="1080" loading="lazy" />
     </div>
   </div>
 </section>
@@ -343,7 +430,7 @@
   <div class="container">
     <div class="value-props__header">
       <h2>Everything you need to improve your Writing score</h2>
-      <p>All the features expensive prep tools charge for — completely free.</p>
+      <p>Everything you need for focused Writing practice — completely free.</p>
     </div>
     <div class="value-grid">
       <div class="value-card">
@@ -403,12 +490,12 @@
       <div class="ai-card">
         <h3>Detailed Writing Feedback</h3>
         <p>Get scores, criterion notes, and improvement suggestions in a structured format — not a long chat transcript.</p>
-        <img src="./assets/product_images/Feedback%20Page.png" alt="Writing feedback overview" />
+        <img src="./assets/product_images/Feedback%20Page.png" alt="OpenPrep structured TOEFL Writing feedback overview with scores and criterion breakdown" width="1920" height="1080" loading="lazy" />
       </div>
       <div class="ai-card">
         <h3>Phrase-Level Coaching</h3>
         <p>See exactly which phrases to replace, why they fall short, and what formal alternatives work better.</p>
-        <img src="./assets/product_images/Detailed%20Feedback%20Section.png" alt="Phrase-level feedback" />
+        <img src="./assets/product_images/Detailed%20Feedback%20Section.png" alt="OpenPrep phrase-level writing feedback showing highlighted suggestions and formal alternatives" width="1920" height="711" loading="lazy" />
       </div>
     </div>
   </div>
@@ -427,7 +514,7 @@
       </div>
     </div>
     <div class="desktop-section__visual">
-      <img src="./assets/product_images/Connect%20AI%20Tool%20page.png" alt="OpenPrep AI tool picker" />
+      <img src="./assets/product_images/Connect%20AI%20Tool%20page.png" alt="OpenPrep AI tool picker connecting to ChatGPT, Claude, OpenCode, or Ollama" width="1512" height="1031" loading="lazy" />
     </div>
   </div>
 </section>
@@ -436,7 +523,7 @@
 <section class="features section">
   <div class="container">
     <div class="features__header">
-      <h2>More proof we're the best deal in TOEFL&reg; Writing prep</h2>
+      <h2>More value built into every practice session</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card">
@@ -444,15 +531,51 @@
           <h3>Structured Feedback Dashboard</h3>
           <p>Review your overall score, CEFR level, and detailed criterion breakdowns in one clean view.</p>
         </div>
-        <img src="./assets/product_images/Feedback%20Page%20-%20With%20back%20to%20prompt%20button.png" alt="Feedback dashboard" />
+        <img src="./assets/product_images/Feedback%20Page%20-%20With%20back%20to%20prompt%20button.png" alt="OpenPrep TOEFL Writing feedback dashboard with overall score, CEFR level, and criterion subscores" width="1920" height="1080" loading="lazy" />
       </div>
       <div class="feature-card">
         <div>
           <h3>Focused Writing Workspace</h3>
           <p>The prompt stays visible beside your response so you can stay in the essay without switching tabs.</p>
         </div>
-        <img src="./assets/product_images/Task%20Detail%20Page.png" alt="Writing workspace" />
+        <img src="./assets/product_images/Task%20Detail%20Page.png" alt="OpenPrep focused TOEFL Writing workspace with task instructions and response area" width="1920" height="1080" loading="lazy" />
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Guides -->
+<section class="guides-section section" style="background: var(--bg);">
+  <div class="container">
+    <div class="value-props__header">
+      <h2>Free TOEFL&reg; Writing guides</h2>
+      <p>Learn the test, compare tools, and get more from your AI feedback.</p>
+    </div>
+    <div class="value-grid">
+      <a href="./guides/toefl-writing-complete-guide" class="value-card">
+        <h3>Complete Writing Guide</h3>
+        <p>Task types, scoring, rubrics, templates, and a 4-week study plan.</p>
+      </a>
+      <a href="./guides/free-toefl-writing-practice-tools" class="value-card">
+        <h3>Free Practice Tools</h3>
+        <p>Compare the best free TOEFL&reg; Writing practice resources.</p>
+      </a>
+      <a href="./guides/openprep-vs-magoosh" class="value-card">
+        <h3>OpenPrep vs Magoosh</h3>
+        <p>See how OpenPrep compares to the leading paid prep platform.</p>
+      </a>
+      <a href="./guides/ai-feedback-toefl-essays" class="value-card">
+        <h3>AI Feedback Guide</h3>
+        <p>How to get structured, actionable feedback on your essays.</p>
+      </a>
+      <a href="./guides/chatgpt-toefl-writing" class="value-card">
+        <h3>ChatGPT for TOEFL&reg; Writing</h3>
+        <p>Prompts and workflows for practicing with ChatGPT.</p>
+      </a>
+      <a href="./guides/toefl-academic-discussion-examples" class="value-card">
+        <h3>Academic Discussion Examples</h3>
+        <p>Realistic prompts and a sample response for the new task.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -461,8 +584,24 @@
 <section class="cta-section">
   <div class="container">
     <h2>Start improving your TOEFL&reg; Writing score today.</h2>
-    <p>Free, open-source, and built for learners who want structured feedback without the subscription.</p>
+    <p>Free, open-source, and built for learners who want structured feedback without a subscription.</p>
     <a href="https://github.com/MauriceHeinze/open-prep/releases" class="btn btn-green">Download OpenPrep for macOS</a>
+  </div>
+</section>
+
+<!-- About / Canonical facts -->
+<section id="about" class="about section" style="background: var(--white); padding: 80px 0;">
+  <div class="container" style="max-width: 760px; text-align: center;">
+    <h2 style="font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin-bottom: 16px;">What is OpenPrep?</h2>
+    <p style="font-size: 1.1rem; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px;">
+      OpenPrep is a free, open-source (MIT) desktop app for macOS. It helps learners practice TOEFL&reg; Writing with structured AI feedback using tools they already have.
+    </p>
+    <p style="font-size: 1.1rem; color: var(--text-soft); line-height: 1.6; margin-bottom: 20px;">
+      Connect ChatGPT via Codex, Claude Code, OpenCode, or local Ollama models. Then pick a curated TOEFL&reg;-style prompt, write your response, and get back an overall score, CEFR level, criterion subscores, improvement points, and phrase-level recommendations.
+    </p>
+    <p style="font-size: 1.1rem; color: var(--text-soft); line-height: 1.6;">
+      Every attempt is saved locally on your Mac. There is no subscription, no usage limit, and no data is sent to OpenPrep servers.
+    </p>
   </div>
 </section>
 
@@ -511,6 +650,15 @@
         <li><a href="https://github.com/MauriceHeinze/open-prep" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://github.com/MauriceHeinze/open-prep/releases" target="_blank" rel="noopener">Releases</a></li>
         <li><a href="https://github.com/MauriceHeinze/open-prep/blob/main/README.md" target="_blank" rel="noopener">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="./guides/toefl-writing-complete-guide">Complete Writing Guide</a></li>
+        <li><a href="./guides/free-toefl-writing-practice-tools">Free Practice Tools</a></li>
+        <li><a href="./guides/openprep-vs-magoosh">OpenPrep vs Magoosh</a></li>
+        <li><a href="./guides/ai-feedback-toefl-essays">AI Feedback Guide</a></li>
       </ul>
     </div>
     <div class="footer__col">

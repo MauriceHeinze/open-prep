@@ -1,0 +1,35 @@
+# OpenPrep
+
+OpenPrep is a free, open-source (MIT) desktop app for TOEFL® Writing practice.
+
+## What is OpenPrep?
+
+OpenPrep is a local-first macOS application that gives TOEFL® learners structured writing practice and AI-powered feedback. Users pick a TOEFL®-style writing prompt, write their response in a focused desktop workspace, and submit it for evaluation.
+
+## How much does OpenPrep cost?
+
+OpenPrep is completely free and open source under the MIT license. There is no subscription, no usage limit, and no hidden cost.
+
+## What AI tools does OpenPrep support?
+
+OpenPrep connects to AI tools the user already has installed, including ChatGPT via Codex, Claude Code, OpenCode, and local Ollama models.
+
+## What feedback does OpenPrep provide?
+
+The app returns structured feedback: an overall TOEFL® score, CEFR level, criterion-based subscores, improvement points, and phrase-level recommendations with highlighted suggestions.
+
+## Who is OpenPrep for?
+
+Learners who already use AI tools and want focused, free TOEFL® Writing practice without paying for a full exam-prep platform.
+
+## Where can I download OpenPrep?
+
+https://github.com/MauriceHeinze/open-prep/releases
+
+## License
+
+MIT License — https://github.com/MauriceHeinze/open-prep/blob/main/LICENSE
+
+## Project home page
+
+https://mauriceheinze.github.io/open-prep/

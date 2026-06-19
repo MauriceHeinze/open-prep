@@ -57,7 +57,7 @@
 ---
 
 ## 10. Competitor Pricing Context
-**$50–100/month** for typical AI-powered TOEFL prep platforms.
+**Varies by platform** — paid TOEFL prep tools typically use monthly or multi-month subscriptions. Verify current competitor pricing before making public claims.
 
 ---
 
@@ -124,7 +124,7 @@
 | **Tone** | Friendly, encouraging, supportive |
 | **Primary CTA** | Download DMG for macOS |
 | **Key message** | Works with AI you already have |
-| **Pricing angle** | Free vs. competitors at $50–100/month |
+| **Pricing angle** | Free vs. paid subscription models |
 | **Main objection to overcome** | "Too technical" — make setup feel simple |
 | **Visuals** | Screenshots + provider logos (no model names) |
 | **Colors** | Purple `#5e2f7d` + Green `#30C08B` (keep) |
